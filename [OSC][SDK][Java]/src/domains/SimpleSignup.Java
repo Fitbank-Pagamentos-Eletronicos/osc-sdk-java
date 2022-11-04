@@ -1,5 +1,6 @@
 package domains;
 
+import java.sql.Date;
 import java.util.InputMismatchException;
 
 public class SignupMatch{
@@ -22,7 +23,7 @@ public class SignupMatch{
 
 
  
-    public SignupMatch(String cpf, String name, String birthday, String email, String phone, String zipCode, String education, String banks, String occupation, float income, boolean hasCreditCard,boolean hasRestriction, boolean hasOwnHouse, boolean hasVehicle, boolean hasAndroid) {
+    public SimpleSignup(String cpf, String name, String birthday, String email, String phone, String zipCode, String education, String banks, String occupation, float income, boolean hasCreditCard,boolean hasRestriction, boolean hasOwnHouse, boolean hasVehicle, boolean hasAndroid) {
         setCpf(cpf);
         setName(name);
         setBirthday(birthday);
