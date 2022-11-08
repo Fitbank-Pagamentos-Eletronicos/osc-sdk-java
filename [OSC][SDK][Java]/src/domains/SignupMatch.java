@@ -10,19 +10,23 @@ public class SignupMatch{
     private String email;
     private String phone;
     private String zipCode;
-    private String education;
+    private Education education;
     private String banks;
-    private String occupation;
+    private Occupation occupation;
     private float income;
     private boolean hasCreditCard;
     private boolean hasRestriction;
     private boolean hasOwnHouse;
     private boolean hasVehicle;
     private boolean hasAndroid;
+    private Products products;
+    private LogData logData;
 
 
  
-    public SignupMatch(String cpf, String name, String birthday, String email, String phone, String zipCode, String education, String banks, String occupation, float income, boolean hasCreditCard,boolean hasRestriction, boolean hasOwnHouse, boolean hasVehicle, boolean hasAndroid) {
+
+
+    public SignupMatch(String cpf, String name, String birthday, String email, String phone, String zipCode, Education education, String banks, Occupation occupation, float income, boolean hasCreditCard,boolean hasRestriction, boolean hasOwnHouse, boolean hasVehicle, boolean hasAndroid, Products products, LogData logData) {
         setCpf(cpf);
         setName(name);
         setBirthday(birthday);
@@ -38,6 +42,9 @@ public class SignupMatch{
         setHasOwnHouse(hasOwnHouse);
         setHasVehicle(hasVehicle);
         setHasAndroid(hasAndroid);
+        setProducts(products);
+        setLogData(logData);
+
     }
     
     public String getCpf(){
@@ -106,14 +113,13 @@ public class SignupMatch{
         this.banks = b.toString();
     }
 
-    public String getOccupation() {
+    public Occupation getOccupation() {
         return occupation;
     }
 
-    public void setOccupation(String occupation) {
-        Occupation o;
-        o = Occupation.valueOf(occupation);
-        this.occupation = o.toString();
+    public void setOccupation(Occupation occupation) {
+
+        this.occupation = occupation;
     }
 
     public float getIncome() {
@@ -124,14 +130,12 @@ public class SignupMatch{
         this.income = income;
     }
     
-    public String getEducation() {
+    public Education getEducation() {
         return education;
     }
 
-    public void setEducation(String education) {
-        Education e;
-        e = Education.valueOf(education);
-        this.education = e.toString();
+    public void setEducation(Education education) {
+        this.education = education;
     }
     
 
@@ -176,6 +180,22 @@ public class SignupMatch{
 
     public void setHasAndroid(boolean hasAndroid) {
         this.hasAndroid = hasAndroid;
+    }
+
+    public Products getProducts() {
+        return products;
+    }
+
+    public void setProducts(Products products) {
+        this.products = products;
+    }
+
+    public LogData getLogData() {
+        return logData;
+    }
+
+    public void setLogData(LogData logData) {
+        this.logData = logData;
     }
 
     
