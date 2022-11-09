@@ -1,6 +1,8 @@
 package domains;
 
-public class MatchHome {
+import java.io.Serializable;
+
+public class MatchHome implements Serializable{
     
 
     private Integer productId;

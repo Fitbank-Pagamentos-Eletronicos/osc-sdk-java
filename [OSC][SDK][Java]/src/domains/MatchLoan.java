@@ -1,6 +1,8 @@
 package domains;
 
-public class MatchLoan {
+import java.io.Serializable;
+
+public class MatchLoan implements Serializable{
     
 
     private Integer productId;

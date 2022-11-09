@@ -1,6 +1,8 @@
 package domains;
 
-public class LogData {
+import java.io.Serializable;
+
+public class LogData implements Serializable{
 
     private float latitude;
     private float longitude;

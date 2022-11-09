@@ -1,8 +1,9 @@
 package domains;
 
+import java.io.Serializable;
 import java.util.InputMismatchException;
 
-public class SignupMatch{
+public class SignupMatch implements Serializable{
     
     private String cpf;
     private String name;

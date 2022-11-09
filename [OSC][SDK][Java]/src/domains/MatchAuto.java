@@ -1,6 +1,8 @@
 package domains;
 
-public class MatchAuto {
+import java.io.Serializable;
+
+public class MatchAuto implements Serializable{
     
 
     private Integer productId;

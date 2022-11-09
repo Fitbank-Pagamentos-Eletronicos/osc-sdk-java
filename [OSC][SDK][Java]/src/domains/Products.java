@@ -1,6 +1,8 @@
 package domains;
 
-public class Products {
+import java.io.Serializable;
+
+public class Products implements Serializable{
     private ProductLoan productLoan;
     private ProductCard productCard;
     private ProductAuto productAuto;

@@ -1,6 +1,8 @@
 package domains;
 
-public class SignContract {
+import java.io.Serializable;
+
+public class SignContract implements Serializable{
     private String aceptedCheckSum;
 
     public SignContract(String aceptedCheckSum){

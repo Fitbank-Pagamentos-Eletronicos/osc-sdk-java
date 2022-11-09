@@ -1,6 +1,8 @@
 package domains;
 
-public class ErrorField {
+import java.io.Serializable;
+
+public class ErrorField implements Serializable{
     private String field;
     private String message;
 

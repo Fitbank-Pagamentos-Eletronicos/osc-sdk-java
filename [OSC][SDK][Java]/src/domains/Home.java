@@ -1,6 +1,8 @@
 package domains;
 
-public class Home {
+import java.io.Serializable;
+
+public class Home implements Serializable{
     private String customerServiceNumber;
     private ProductType type;
     private String product;

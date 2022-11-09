@@ -1,6 +1,8 @@
 package domains;
 
-public class MatchCard {
+import java.io.Serializable;
+
+public class MatchCard implements Serializable{
     private int productId;
     private String name;
     private String logo;

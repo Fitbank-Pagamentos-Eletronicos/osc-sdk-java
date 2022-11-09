@@ -1,6 +1,8 @@
 package domains;
 
-public class Proposal {
+import java.io.Serializable;
+
+public class Proposal implements Serializable{
     private String mother;
     private Gender gender;
     private State hometownState;

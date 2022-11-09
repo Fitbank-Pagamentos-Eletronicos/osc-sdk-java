@@ -1,6 +1,8 @@
 package domains;
 
-public class Match {
+import java.io.Serializable;
+
+public class Match implements Serializable{
     private MatchLoan matchLoan;
     private MatchCard matchCard;
     private MatchAuto matchAuto;

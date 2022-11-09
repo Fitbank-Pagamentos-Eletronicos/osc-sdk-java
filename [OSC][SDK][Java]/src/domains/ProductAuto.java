@@ -1,6 +1,8 @@
 package domains;
 
-public class ProductAuto {
+import java.io.Serializable;
+
+public class ProductAuto implements Serializable{
     private ProductType type;
     private float value;
     private String vehicleBrand;

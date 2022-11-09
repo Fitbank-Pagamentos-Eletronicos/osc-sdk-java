@@ -1,9 +1,9 @@
 package domains;
 
-import java.sql.Date;
+import java.io.Serializable;
 import java.util.InputMismatchException;
 
-public class SignupMatch{
+public class SimpleSignup implements Serializable{
     
     private String cpf;
     private String name;

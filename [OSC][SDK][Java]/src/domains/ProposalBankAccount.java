@@ -1,6 +1,8 @@
 package domains;
 
-public class ProposalBankAccount {
+import java.io.Serializable;
+
+public class ProposalBankAccount implements Serializable{
     private String mother;
     private Gender gender;
     private Nationality nationality;

@@ -1,6 +1,8 @@
 package domains;
 
-public class PipelineWithProposal {
+import java.io.Serializable;
+
+public class PipelineWithProposal implements Serializable{
     private String id;
     private String status;
     private int cpf;

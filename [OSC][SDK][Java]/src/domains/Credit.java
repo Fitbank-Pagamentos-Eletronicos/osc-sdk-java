@@ -1,6 +1,8 @@
 package domains;
 
-public class Credit {
+import java.io.Serializable;
+
+public class Credit implements Serializable{
     private String customerServiceNumber;
     private ProductType type;
     private String product;

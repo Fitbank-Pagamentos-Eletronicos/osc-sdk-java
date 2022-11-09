@@ -1,6 +1,8 @@
 package domains;
 
-public class ConsumerUnit {
+import java.io.Serializable;
+
+public class ConsumerUnit implements Serializable{
     
     private String number;
 

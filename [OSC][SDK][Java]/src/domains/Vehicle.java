@@ -1,6 +1,8 @@
 package domains;
 
-public class Vehicle {
+import java.io.Serializable;
+
+public class Vehicle implements Serializable{
     private String licensePlate;
 
     public Vehicle(String licensePlate){

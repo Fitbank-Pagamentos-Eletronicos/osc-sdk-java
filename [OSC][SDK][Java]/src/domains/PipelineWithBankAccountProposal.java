@@ -1,6 +1,8 @@
 package domains;
 
-public class PipelineWithBankAccountProposal {
+import java.io.Serializable;
+
+public class PipelineWithBankAccountProposal implements Serializable{
     private String id;
     private String status;
     private int cpf;

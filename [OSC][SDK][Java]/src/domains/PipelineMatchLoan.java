@@ -1,6 +1,8 @@
 package domains;
 
-public class PipelineMatchLoan {
+import java.io.Serializable;
+
+public class PipelineMatchLoan implements Serializable{
     private String id;
     private String status;
     private int cpf;

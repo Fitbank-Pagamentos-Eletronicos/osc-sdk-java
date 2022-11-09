@@ -1,6 +1,8 @@
 package domains;
 
-public class Error {
+import java.io.Serializable;
+
+public class Error implements Serializable{
 
     private String code;
     private String message;

@@ -1,6 +1,8 @@
 package domains;
 
-public class ProductCard {
+import java.io.Serializable;
+
+public class ProductCard implements Serializable{
     private ProductType type;
     private Network network;
     private String payDay;

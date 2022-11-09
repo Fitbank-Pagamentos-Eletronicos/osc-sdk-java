@@ -1,6 +1,8 @@
 package domains;
 
-public class Document {
+import java.io.Serializable;
+
+public class Document implements Serializable{
     private DocumentType type;
     private MimeType mimeType;
     private String name;

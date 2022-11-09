@@ -1,8 +1,9 @@
 package domains;
 
+import java.io.Serializable;
 import java.util.InputMismatchException;
 
-public class PipelineProposal {
+public class PipelineProposal implements Serializable{
     private String id;
     private String status;
     private String cpf;

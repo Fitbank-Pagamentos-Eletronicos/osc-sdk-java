@@ -1,6 +1,8 @@
 package domains;
 
-public class AuthSucess {
+import java.io.Serializable;
+
+public class AuthSucess implements Serializable {
     private String access_token;
     private String expire_at;
 

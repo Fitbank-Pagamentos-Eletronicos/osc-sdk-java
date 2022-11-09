@@ -1,6 +1,8 @@
 package domains;
 
-public class Loan {
+import java.io.Serializable;
+
+public class Loan implements Serializable{
     private String customerServiceNumber;
     private ProductType type;
     private String product;

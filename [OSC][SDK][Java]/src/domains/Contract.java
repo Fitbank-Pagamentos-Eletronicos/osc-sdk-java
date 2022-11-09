@@ -1,6 +1,8 @@
 package domains;
 
-public class Contract {
+import java.io.Serializable;
+
+public class Contract implements Serializable{
     
     private String aceptedCheckSum;
     private LogData logData;

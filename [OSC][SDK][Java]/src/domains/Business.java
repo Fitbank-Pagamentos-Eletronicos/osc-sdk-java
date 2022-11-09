@@ -1,6 +1,8 @@
 package domains;
 
-public class Business {
+import java.io.Serializable;
+
+public class Business implements Serializable{
     private Occupation occupation;
     private Profession profession;
     private String companyName;

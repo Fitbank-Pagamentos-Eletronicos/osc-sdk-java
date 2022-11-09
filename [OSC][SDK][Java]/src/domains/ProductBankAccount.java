@@ -1,6 +1,8 @@
 package domains;
 
-public class ProductBankAccount {
+import java.io.Serializable;
+
+public class ProductBankAccount implements Serializable{
     private String type;
 
     public ProductBankAccount(String type) {

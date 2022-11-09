@@ -1,6 +1,8 @@
 package domains;
 
-public class BorrowerInfo {
+import java.io.Serializable;
+
+public class BorrowerInfo implements Serializable{
     private boolean isRegistred;
     private boolean isBlocked;
 

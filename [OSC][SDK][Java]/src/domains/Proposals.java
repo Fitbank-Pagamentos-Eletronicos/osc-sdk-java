@@ -1,6 +1,8 @@
 package domains;
 
-public class Proposals {
+import java.io.Serializable;
+
+public class Proposals implements Serializable{
     private Loan loan;
     private Card card;
     private Auto auto;

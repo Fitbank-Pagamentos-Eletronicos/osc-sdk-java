@@ -1,6 +1,8 @@
 package domains;
 
-public class Identity {
+import java.io.Serializable;
+
+public class Identity implements Serializable{
     private IdentityType type;
     private String number;
     private IdentityIssuer issuer;

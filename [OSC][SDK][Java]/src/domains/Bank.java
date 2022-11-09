@@ -1,6 +1,8 @@
 package domains;
 
-public class Bank {
+import java.io.Serializable;
+
+public class Bank implements Serializable{
     private Banks bank;
     private AccountType type;
     private String agency;

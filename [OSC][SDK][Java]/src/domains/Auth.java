@@ -1,5 +1,8 @@
 package domains;
-public class Auth{
+
+import java.io.Serializable;
+
+public class Auth implements Serializable{
     
     private String client_id;
     private String client_secret;
