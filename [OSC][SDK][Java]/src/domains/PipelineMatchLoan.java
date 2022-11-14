@@ -12,6 +12,9 @@ public class PipelineMatchLoan implements Serializable{
     private Match matches;
 
 
+    public PipelineMatchLoan(){
+        
+    }
     public PipelineMatchLoan(String id, String status, int cpf, String name, String dateCreated, String lastUpdated,
             Match matches) {
         setId(id);

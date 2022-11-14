@@ -6,6 +6,9 @@ public class ErrorField implements Serializable{
     private String field;
     private String message;
 
+    public ErrorField(){
+        
+    }
     public ErrorField(String field, String message){
         setField(field);
         setMessage(message);

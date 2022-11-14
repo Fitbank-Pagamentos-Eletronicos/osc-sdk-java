@@ -12,7 +12,7 @@ public class SignupMatch implements Serializable{
     private String phone;
     private String zipCode;
     private Education education;
-    private String banks;
+    private Banks banks;
     private Occupation occupation;
     private float income;
     private boolean hasCreditCard;
@@ -24,10 +24,12 @@ public class SignupMatch implements Serializable{
     private LogData logData;
 
 
- 
+    public SignupMatch(){
+        
+    }
 
 
-    public SignupMatch(String cpf, String name, String birthday, String email, String phone, String zipCode, Education education, String banks, Occupation occupation, float income, boolean hasCreditCard,boolean hasRestriction, boolean hasOwnHouse, boolean hasVehicle, boolean hasAndroid, Products products, LogData logData) {
+    public SignupMatch(String cpf, String name, String birthday, String email, String phone, String zipCode, Education education, Banks banks, Occupation occupation, float income, boolean hasCreditCard,boolean hasRestriction, boolean hasOwnHouse, boolean hasVehicle, boolean hasAndroid, Products products, LogData logData) {
         setCpf(cpf);
         setName(name);
         setBirthday(birthday);
@@ -52,43 +54,27 @@ public class SignupMatch implements Serializable{
         return cpf;
     }
     public void setCpf(String cpf){
-        if(isCPF(cpf)){
-            this.cpf = cpf;
-        }
-        else{
-            //erro 
-        }
+        this.cpf = cpf;
     }
 
     public String getName(){
         return name;
     }
     public void setName(String name){
-        if(name.length() <= 100){
-            this.name = name;
-        }
-        else{
-            //erro
-        }
+        this.name = name;
     }
 
     public String getBirthday() {
         return birthday;
     }
     public void setBirthday(String birthday) {
-   //     Date verificardor = birthday.format("yyyy-MM-dd	", birthday);
         this.birthday = birthday;
     }
     public String getEmail(){
         return email;
     }
     public void setEmail(String email){
-        if(isValidEmailAddress(email)){
             this.email = email;
-        }
-        else{
-            //erro
-        }
     }
 
     public String getPhone() {
@@ -105,15 +91,13 @@ public class SignupMatch implements Serializable{
         this.zipCode = zipCode;
     }
 
-    public String getBanks() {
+    public Banks getBanks() {
         return banks;
     }
-    public void setBanks(String banks) {
-        Banks b;
-        b = Banks.valueOf(banks);
-        this.banks = b.toString();
-    }
+    public void setBanks(Banks banks) {
 
+        this.banks = banks;
+    }
     public Occupation getOccupation() {
         return occupation;
     }

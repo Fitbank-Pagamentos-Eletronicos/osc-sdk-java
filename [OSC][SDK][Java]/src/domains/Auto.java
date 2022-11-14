@@ -14,7 +14,7 @@ public class Auto implements Serializable{
     private PendentDocuments pendentDocuments;
     private String dateCreated;
     private String lastUpdated;
-    private Float value;
+    private float value;
     private int installments;
     private float monthlyTax;
     private float installmentsValue;
@@ -24,9 +24,12 @@ public class Auto implements Serializable{
     private float cet;
     private String releasedDate;
     
+    public Auto(){
+        
+    }
     public Auto(String customerServiceNumber, ProductType type, String product, int productId, boolean hasDocuments,
             boolean hasContracts, String logo, CreditStatus laststatus, PendentDocuments pendentDocuments,
-            String dateCreated, String lastUpdated, Float value, int installments, float monthlyTax,
+            String dateCreated, String lastUpdated, float value, int installments, float monthlyTax,
             float installmentsValue, float iofValue, float grossValue, String firstPaymentDate, float cet,
             String releasedDate) {
         setCustomerServiceNumber(customerServiceNumber);
@@ -117,10 +120,10 @@ public class Auto implements Serializable{
     public void setLastUpdated(String lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
-    public Float getValue() {
+    public float getValue() {
         return value;
     }
-    public void setValue(Float value) {
+    public void setValue(float value) {
         this.value = value;
     }
     public int getInstallments() {

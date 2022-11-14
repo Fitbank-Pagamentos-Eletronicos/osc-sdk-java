@@ -1,0 +1,357 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch SignupMatchTest",
+            "request": "launch",
+            "mainClass": "test.SignupMatchTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch PipelineWithBankAccountProposalTest",
+            "request": "launch",
+            "mainClass": "test.PipelineWithBankAccountProposalTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch PipelineWithProposalTest",
+            "request": "launch",
+            "mainClass": "test.PipelineWithProposalTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProposalsTest",
+            "request": "launch",
+            "mainClass": "test.ProposalsTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProposalBankAccountTest",
+            "request": "launch",
+            "mainClass": "test.ProposalBankAccountTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch AddressTest",
+            "request": "launch",
+            "mainClass": "test.AddressTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch BankTest",
+            "request": "launch",
+            "mainClass": "test.BankTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch IdentityTest",
+            "request": "launch",
+            "mainClass": "test.IdentityTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProposalTest",
+            "request": "launch",
+            "mainClass": "test.ProposalTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch CityTest",
+            "request": "launch",
+            "mainClass": "test.CityTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch BusinessTest",
+            "request": "launch",
+            "mainClass": "test.BusinessTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConsumerUnitTest",
+            "request": "launch",
+            "mainClass": "test.ConsumerUnitTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ContractTest",
+            "request": "launch",
+            "mainClass": "test.ContractTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch DocumentResponseTest",
+            "request": "launch",
+            "mainClass": "test.DocumentResponseTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch DocumentTest",
+            "request": "launch",
+            "mainClass": "test.DocumentTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch PipelineMatchLoanTest",
+            "request": "launch",
+            "mainClass": "test.PipelineMatchLoanTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch MatchTest",
+            "request": "launch",
+            "mainClass": "test.MatchTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch PipelineExpireTest",
+            "request": "launch",
+            "mainClass": "test.PipelineExpireTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch PipelineProposalTest",
+            "request": "launch",
+            "mainClass": "test.PipelineProposalTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch CreditTest",
+            "request": "launch",
+            "mainClass": "test.CreditTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch BankAccountTest",
+            "request": "launch",
+            "mainClass": "test.BankAccountTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch MatchLoanTest",
+            "request": "launch",
+            "mainClass": "test.MatchLoanTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch MatchHomeTest",
+            "request": "launch",
+            "mainClass": "test.MatchHomeTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch MatchCardTest",
+            "request": "launch",
+            "mainClass": "test.MatchCardTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch MatchAutoTest",
+            "request": "launch",
+            "mainClass": "test.MatchAutoTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch HomeTest",
+            "request": "launch",
+            "mainClass": "test.HomeTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch AutoTest",
+            "request": "launch",
+            "mainClass": "test.AutoTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch PipelineTest",
+            "request": "launch",
+            "mainClass": "test.PipelineTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch AuthSucessTest",
+            "request": "launch",
+            "mainClass": "test.AuthSucessTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch CardTest",
+            "request": "launch",
+            "mainClass": "test.CardTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch LoanTest",
+            "request": "launch",
+            "mainClass": "test.LoanTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProductTest",
+            "request": "launch",
+            "mainClass": "test.ProductTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProductsTest",
+            "request": "launch",
+            "mainClass": "test.ProductsTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProductBankAccountTest",
+            "request": "launch",
+            "mainClass": "test.ProductBankAccountTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProductLoanTest",
+            "request": "launch",
+            "mainClass": "test.ProductLoanTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProductHomeTest",
+            "request": "launch",
+            "mainClass": "test.ProductHomeTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProductCardTest",
+            "request": "launch",
+            "mainClass": "test.ProductCardTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProductAutoTest",
+            "request": "launch",
+            "mainClass": "test.ProductAutoTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch BorrowerInfoTest",
+            "request": "launch",
+            "mainClass": "test.BorrowerInfoTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ErrorTest",
+            "request": "launch",
+            "mainClass": "test.ErrorTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ErrorFieldsTest",
+            "request": "launch",
+            "mainClass": "test.ErrorFieldsTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ErrorFieldTest",
+            "request": "launch",
+            "mainClass": "test.ErrorFieldTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReferenceTest",
+            "request": "launch",
+            "mainClass": "test.ReferenceTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch SignContractTest",
+            "request": "launch",
+            "mainClass": "test.SignContractTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch LogDataTest",
+            "request": "launch",
+            "mainClass": "test.LogDataTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch SimpleSignupTest",
+            "request": "launch",
+            "mainClass": "test.SimpleSignupTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch VehicleTest",
+            "request": "launch",
+            "mainClass": "test.VehicleTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        },
+        {
+            "type": "java",
+            "name": "Launch AuthTest",
+            "request": "launch",
+            "mainClass": "test.AuthTest",
+            "projectName": "[OSC][SDK][Java]_2bb73c3a"
+        }
+    ]
+}

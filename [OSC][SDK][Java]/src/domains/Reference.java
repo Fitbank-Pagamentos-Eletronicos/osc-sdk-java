@@ -7,6 +7,9 @@ public class Reference implements Serializable{
     private String name;
     private String phone;
 
+    public Reference(){
+        
+    }
     public Reference(String name, String phone){
         setName(name);
         setPhone(phone);

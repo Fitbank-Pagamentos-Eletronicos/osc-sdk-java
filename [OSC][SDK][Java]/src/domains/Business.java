@@ -19,6 +19,10 @@ public class Business implements Serializable{
     private State state;
     private City city;
 
+    public Business(){
+        
+    }
+
     public Business(Occupation occupation, Profession profession, String companyName, String phone, String income,
             EmploymentSince employmentSince, String payday, String benefitNumber, String zipCode, String adress,
             String number, String complement, String district, State state, City city) {

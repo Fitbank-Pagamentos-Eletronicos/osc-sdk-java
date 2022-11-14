@@ -11,6 +11,9 @@ public class PipelineWithBankAccountProposal implements Serializable{
     private String lastUpdated;
     private BankAccount proposals;
     
+    public PipelineWithBankAccountProposal(){
+        
+    }
     public PipelineWithBankAccountProposal(String id, String status, int cpf, String name, String dateCreated,
             String lastUpdated, BankAccount proposals) {
         setId(id);

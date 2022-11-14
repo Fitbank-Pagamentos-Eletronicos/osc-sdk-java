@@ -8,6 +8,9 @@ public class Bank implements Serializable{
     private String agency;
     private String account;
     
+    public Bank(){
+        
+    }
     public Bank(Banks bank, AccountType type, String agency, String account) {
         setBank(bank);
         setType(type);

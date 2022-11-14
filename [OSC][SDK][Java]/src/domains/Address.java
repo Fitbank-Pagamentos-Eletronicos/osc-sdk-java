@@ -12,6 +12,9 @@ public class Address implements Serializable {
     private HomeType homeType;
     private HomeSince homeSince;
 
+    public Address(){
+        
+    }
     public Address(String zipCode, String address, String complement, String district, State state, City city,
             HomeType homeType, HomeSince homeSince) {
         setZipCode(zipCode);

@@ -15,6 +15,9 @@ public class Credit implements Serializable{
     private String dateCreated;
     private String lastUpdated;
     
+    public Credit(){
+        
+    }
     public Credit(String customerServiceNumber, ProductType type, String product, int productId, boolean hasDocuments,
             boolean hasContracts, String logo, CreditStatus lastStatus, PendentDocuments pendentDocuments,
             String dateCreated, String lastUpdated) {

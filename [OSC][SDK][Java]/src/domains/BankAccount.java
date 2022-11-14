@@ -12,7 +12,9 @@ public class BankAccount implements Serializable{
     private String dateCreated;
     private String lastUpdated;
 
-    
+    public BankAccount(){
+        
+    }
     public BankAccount(String customerServiceNumber, String product, int productId, boolean hasDocuments,
             boolean hasContracts, CreditStatus lastStatus, String dateCreated, String lastUpdated) {
         setCustomerServiceNumber(customerServiceNumber);

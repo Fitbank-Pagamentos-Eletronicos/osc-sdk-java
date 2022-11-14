@@ -8,6 +8,10 @@ public class ErrorFields implements Serializable{
     private ErrorField errors;
 
 
+    public ErrorFields(){
+        
+    }
+
     public ErrorFields(String code, String message, ErrorField errors) {
         setCode(code);
         setMessage(message);

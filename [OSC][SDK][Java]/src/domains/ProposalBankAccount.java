@@ -13,6 +13,9 @@ public class ProposalBankAccount implements Serializable{
     private Business business;
     private ProductBankAccount products;
     
+    public ProposalBankAccount(){
+        
+    }
     public ProposalBankAccount(String mother, Gender gender, Nationality nationality, State hometownState,
             RelationshipStatus relationshipStatus, Identity identity, Address address, Business business,
             ProductBankAccount products) {

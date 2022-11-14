@@ -8,7 +8,9 @@ public class ProductLoan implements Serializable{
     private int installments;
 
 
-
+    public ProductLoan(){
+        
+    }
     
     public ProductLoan(ProductType type, float value, int installments) {
         setType(type);

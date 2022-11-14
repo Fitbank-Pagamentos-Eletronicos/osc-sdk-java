@@ -11,34 +11,32 @@ public class SimpleSignup implements Serializable{
     private String email;
     private String phone;
     private String zipCode;
-    private String education;
-    private String banks;
-    private String occupation;
-    private float income;
     private boolean hasCreditCard;
     private boolean hasRestriction;
     private boolean hasOwnHouse;
     private boolean hasVehicle;
     private boolean hasAndroid;
+    private LogData logData;
 
 
  
-    public SimpleSignup(String cpf, String name, String birthday, String email, String phone, String zipCode, String education, String banks, String occupation, float income, boolean hasCreditCard,boolean hasRestriction, boolean hasOwnHouse, boolean hasVehicle, boolean hasAndroid) {
+    public SimpleSignup(){
+        
+    }
+
+    public SimpleSignup(String cpf, String name, String birthday, String email, String phone, String zipCode, boolean hasCreditCard,boolean hasRestriction, boolean hasOwnHouse, boolean hasVehicle, boolean hasAndroid, LogData logData) {
         setCpf(cpf);
         setName(name);
         setBirthday(birthday);
         setEmail(email);
         setPhone(phone);
         setZipCode(zipCode);
-        setEducation(education);
-        setBanks(banks);
-        setOccupation(occupation);
-        setIncome(income);
         setHasCreditCard(hasCreditCard);
         setHasRestriction(hasRestriction);
         setHasOwnHouse(hasOwnHouse);
         setHasVehicle(hasVehicle);
         setHasAndroid(hasAndroid);
+        setLogData(logData);
     }
     
     public String getCpf(){
@@ -98,43 +96,6 @@ public class SimpleSignup implements Serializable{
         this.zipCode = zipCode;
     }
 
-    public String getBanks() {
-        return banks;
-    }
-    public void setBanks(String banks) {
-        Banks b;
-        b = Banks.valueOf(banks);
-        this.banks = b.toString();
-    }
-
-    public String getOccupation() {
-        return occupation;
-    }
-
-    public void setOccupation(String occupation) {
-        Occupation o;
-        o = Occupation.valueOf(occupation);
-        this.occupation = o.toString();
-    }
-
-    public float getIncome() {
-        return income;
-    }
-
-    public void setIncome(float income) {
-        this.income = income;
-    }
-    
-    public String getEducation() {
-        return education;
-    }
-
-    public void setEducation(String education) {
-        Education e;
-        e = Education.valueOf(education);
-        this.education = e.toString();
-    }
-    
 
     public boolean isHasCreditCard() {
         return hasCreditCard;
@@ -179,6 +140,13 @@ public class SimpleSignup implements Serializable{
         this.hasAndroid = hasAndroid;
     }
 
+    public LogData getLogData() {
+        return logData;
+    }
+
+    public void setLogData(LogData logData) {
+        this.logData = logData;
+    }
     
     
 

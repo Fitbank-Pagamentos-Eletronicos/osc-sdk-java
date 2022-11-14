@@ -13,7 +13,9 @@ public class MatchHome implements Serializable{
     private Integer minInstallment;
     private Integer maxInstallment;
     private float monthlyTax;
-
+    public MatchHome(){
+        
+    }
     public MatchHome(Integer productId, String name, String logo, Integer minValue, Integer maxValue, Integer minInstallment, Integer maxInstallment, float monthlyTax) {
         setProductId(productId);
         setName(name);

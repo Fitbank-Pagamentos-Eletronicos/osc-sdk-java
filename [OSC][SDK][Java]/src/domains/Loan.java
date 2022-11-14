@@ -24,7 +24,9 @@ public class Loan implements Serializable{
     private String releaseDate;
 
 
-    
+    public Loan(){
+        
+    }
     public Loan(String customerServiceNumber, ProductType type, String product, int productId, boolean hasDocuments,
             boolean hasContracts, String logo, CreditStatus lastStatus, PendentDocuments pendentDocuments,
             String dateCreated, String lastUpdated, float value, int installments, float monthlyTax, float iofValue,

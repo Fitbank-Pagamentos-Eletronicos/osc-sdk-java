@@ -8,13 +8,28 @@ public class Match implements Serializable{
     private MatchAuto matchAuto;
     private MatchHome matchHome;
 
+    public Match(){
+        
+    }
 
-    public Match(MatchLoan matchLoan, MatchCard matchCard, MatchAuto matchAuto, MatchHome matchHome) {
-        setMatchLoan(matchLoan);
+    public Match( MatchCard matchCard) {        
         setMatchCard(matchCard);
+        
+    }
+    public Match(MatchLoan matchLoan) {
+        setMatchLoan(matchLoan);
+        
+    }
+
+    public Match( MatchAuto matchAuto) {        
         setMatchAuto(matchAuto);
+        
+    }
+
+    public Match(MatchHome matchHome) {
         setMatchHome(matchHome);
     }
+
 
 
     public MatchLoan getMatchLoan() {

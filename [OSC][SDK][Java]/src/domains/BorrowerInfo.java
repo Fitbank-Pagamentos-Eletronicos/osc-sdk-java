@@ -6,6 +6,10 @@ public class BorrowerInfo implements Serializable{
     private boolean isRegistred;
     private boolean isBlocked;
 
+    public BorrowerInfo(){
+
+    }
+
     public BorrowerInfo(boolean isRegistred, boolean isBlocked){
         setRegistred(isRegistred);
         setBlocked(isBlocked);

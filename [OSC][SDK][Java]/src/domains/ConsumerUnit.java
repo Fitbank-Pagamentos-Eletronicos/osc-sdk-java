@@ -6,6 +6,9 @@ public class ConsumerUnit implements Serializable{
     
     private String number;
 
+    public ConsumerUnit(){
+        
+    }
     public ConsumerUnit(String number){
         setNumber(number);
     }

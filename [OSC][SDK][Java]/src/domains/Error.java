@@ -7,13 +7,17 @@ public class Error implements Serializable{
     private String code;
     private String message;
 
+    public Error(){
+
+    }
+
     public Error(String code, String message){
         setCode(code);
         setMessage(message);
     }
     
 
-    public String getField() {
+    public String getCode() {
         return code;
     }
     public void setCode(String code) {

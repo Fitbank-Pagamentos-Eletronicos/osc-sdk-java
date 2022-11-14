@@ -14,6 +14,9 @@ public class MatchLoan implements Serializable{
     private Integer maxInstallment;
     private float monthlyTax;
 
+    public MatchLoan(){
+        
+    }
     public MatchLoan(Integer productId, String name, String logo, Integer minValue, Integer maxValue, Integer minInstallment, Integer maxInstallment, float monthlyTax) {
         setProductId(productId);
         setName(name);

@@ -5,6 +5,9 @@ import java.io.Serializable;
 public class SignContract implements Serializable{
     private String aceptedCheckSum;
 
+    public SignContract(){
+
+    }
     public SignContract(String aceptedCheckSum){
         setAceptedCheckSum(aceptedCheckSum);
     }

@@ -9,6 +9,9 @@ public class Identity implements Serializable{
     private State state;
     private String issuingDate;
     
+    public Identity(){
+        
+    }
     public Identity(IdentityType type, String number, IdentityIssuer issuer, State state, String issuingDate) {
         setType(type);
         setNumber(number);

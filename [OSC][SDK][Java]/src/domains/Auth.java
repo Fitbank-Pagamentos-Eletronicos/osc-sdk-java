@@ -7,6 +7,10 @@ public class Auth implements Serializable{
     private String client_id;
     private String client_secret;
 
+    public Auth(){
+
+    }
+
     public Auth(String client_id, String client_secret){
         setClient_id(client_id);
         setClient_secret(client_secret);
@@ -24,4 +28,6 @@ public class Auth implements Serializable{
     public String getClient_secret(){
         return client_secret;
     }
+
+    
 }

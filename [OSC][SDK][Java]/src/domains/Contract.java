@@ -7,6 +7,9 @@ public class Contract implements Serializable{
     private String aceptedCheckSum;
     private LogData logData;
 
+    public Contract(){
+        
+    }
     public Contract(String acaceptedCheckSum, LogData logData){
         setAceptedCheckSum(acaceptedCheckSum);
         setLogData(logData);

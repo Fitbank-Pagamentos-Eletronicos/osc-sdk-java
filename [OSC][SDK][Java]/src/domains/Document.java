@@ -8,6 +8,9 @@ public class Document implements Serializable{
     private String name;
     private String base64;
 
+    public Document(){
+        
+    }
     public Document(DocumentType type, MimeType mimeType, String name, String base64) {
         setType(type);
         setMimeType(mimeType);

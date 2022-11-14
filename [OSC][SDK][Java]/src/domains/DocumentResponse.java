@@ -8,6 +8,9 @@ public class DocumentResponse implements Serializable{
     private String name;
     private String url;
     
+    public DocumentResponse(){
+        
+    }
     public DocumentResponse(DocumentType type, MimeType mimeType, String name, String url) {
         setType(type);
         setMimeType(mimeType);

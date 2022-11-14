@@ -14,6 +14,9 @@ public class MatchAuto implements Serializable{
     private Integer maxInstallment;
     private float monthlyTax;
 
+    public MatchAuto(){
+        
+    }
     public MatchAuto(Integer productId, String name, String logo, Integer minValue, Integer maxValue, Integer minInstallment, Integer maxInstallment, float monthlyTax) {
         setProductId(productId);
         setName(name);

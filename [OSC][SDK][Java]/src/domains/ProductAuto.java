@@ -12,10 +12,13 @@ public class ProductAuto implements Serializable{
     private String codeFipe;
     private float vehicleFipeValue;
 
+    public ProductAuto(){
+        
+    }
     public ProductAuto(ProductType type, float value, String vehicleBrand, String vehicleModel, int installments,
             String vehicleModelYear, String codeFipe, float vehicleFipeValue) {
         setType(type);
-        setValue(vehicleFipeValue);
+        setValue(value);
         setVehicleBrand(vehicleBrand);
         setVehicleModel(vehicleModelYear);
         setInstallments(installments);

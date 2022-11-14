@@ -8,10 +8,20 @@ public class Proposals implements Serializable{
     private Auto auto;
     private Home home;
 
-    public Proposals(Loan loan, Card card, Auto auto, Home home) {
+    public Proposals(){
+
+    }
+
+    public Proposals(Loan loan) {
         setLoan(loan);
+    }
+    public Proposals(Card card) {
         setCard(card);
+    }
+    public Proposals(Auto auto) {
         setAuto(auto);
+    }
+    public Proposals(Home home) {
         setHome(home);
     }
 

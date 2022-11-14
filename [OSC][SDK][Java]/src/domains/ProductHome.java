@@ -10,6 +10,10 @@ public class ProductHome implements Serializable{
     private float realEstateValue;
     private float outstandingBalance;
     
+    public ProductHome(){
+
+    }
+    
     public ProductHome(ProductType type, float value, int installments, RealEstateType realEstateType,
             float realEstateValue, float outstandingBalance) {
         setType(type);

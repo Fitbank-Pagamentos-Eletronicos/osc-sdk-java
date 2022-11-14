@@ -6,17 +6,19 @@ public class MatchCard implements Serializable{
     private int productId;
     private String name;
     private String logo;
-    private Float annuity;
+    private float annuity;
     private Network network;
 
-    
+    public MatchCard(){
+
+    }
 
 
-    public MatchCard(int productId, String name, String logo, Float annuity, Network network) {
+    public MatchCard(int productId, String name, String logo, float i, Network network) {
         setProductId(productId);
         setName(name);
         setLogo(logo);
-        setAnnuity(annuity);
+        setAnnuity(i);
         setNetwork(network);
     }
 
@@ -39,10 +41,10 @@ public class MatchCard implements Serializable{
     public void setLogo(String logo) {
         this.logo = logo;
     }
-    public Float getAnnuity() {
+    public float getAnnuity() {
         return annuity;
     }
-    public void setAnnuity(Float annuity) {
+    public void setAnnuity(float annuity) {
         this.annuity = annuity;
     }
     public Network getNetwork() {

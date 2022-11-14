@@ -11,6 +11,9 @@ public class PipelineWithProposal implements Serializable{
     private String lastUpdated;
     private Proposals proposals;
 
+    public PipelineWithProposal(){
+        
+    }
     public PipelineWithProposal(String id, String status, int cpf, String name, String dateCreated, String lastUpdated,
             Proposals proposals) {
         setId(id);

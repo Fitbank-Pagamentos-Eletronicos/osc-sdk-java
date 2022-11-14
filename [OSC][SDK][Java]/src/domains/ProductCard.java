@@ -7,6 +7,10 @@ public class ProductCard implements Serializable{
     private Network network;
     private String payDay;
 
+    public ProductCard(){
+
+    }
+    
     public ProductCard(ProductType type, Network network, String payDay) {
         setType(type);
         setNetwork(network);

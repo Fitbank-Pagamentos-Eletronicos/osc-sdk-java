@@ -11,6 +11,10 @@ public class LogData implements Serializable{
     private String ip;
     private String mac;
 
+    public LogData(){
+        
+    }
+
     public LogData(float latitude, float longitude, String ocourrenceDate, String userAgent, String ip, String mac){
         setLatitude(latitude);
         setLongitude(longitude);

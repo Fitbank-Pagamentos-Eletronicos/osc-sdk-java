@@ -8,12 +8,26 @@ public class Products implements Serializable{
     private ProductAuto productAuto;
     private ProductHome productHome;
 
-    public Products(ProductLoan productLoan, ProductCard productCard, ProductAuto productAuto,
-            ProductHome productHome) {
+    public Products(){
+        
+    }
+    public Products(ProductLoan productLoan) {
         setProductLoan(productLoan);
+        
+    }
+    public Products(ProductCard productCard) {
+        
         setProductCard(productCard);
+        
+    }
+    public Products(ProductAuto productAuto) {
+        
         setProductAuto(productAuto);
-        setProductAuto(productAuto);
+        
+    }
+    public Products(ProductHome productHome) {
+        
+        setProductHome(productHome);
     }
 
     public ProductLoan getProductLoan() {

@@ -19,6 +19,10 @@ public class Card implements Serializable{
     private Network network;
     private boolean prepaid;
     private boolean digitalAccount;
+
+    public Card(){
+        
+    }
     
     public Card(String customerServiceNumber, ProductType type, String product, int productId, Boolean hasDocuments,
             Boolean hasContracts, String logo, CreditStatus lastStatus, PendentDocuments pendentDocuments,

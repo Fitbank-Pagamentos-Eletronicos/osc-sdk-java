@@ -1,6 +1,6 @@
 package domains;
 
-import java.io.Serializable;
+
 
 public enum AccountType {
     CONTA_CORRENTE_INDIVIDUAL, 

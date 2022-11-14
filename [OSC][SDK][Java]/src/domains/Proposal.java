@@ -19,6 +19,9 @@ public class Proposal implements Serializable{
     private Reference reference;
     private Products products;
 
+    public Proposal(){
+        
+    }
     public Proposal(String mother, Gender gender, State hometownState, City hometown, Education education,
             RelationshipStatus relationshipStatus, String phoneLandline, Identity identity, Address address,
             Vehicle vehicle, ConsumerUnit consumerUnit, Business business, Bank bank, Reference reference,
