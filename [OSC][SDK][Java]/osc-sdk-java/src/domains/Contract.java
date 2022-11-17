@@ -1,4 +1,3 @@
-package domains;
 
 import java.io.Serializable;
 
