@@ -1,0 +1,16 @@
+package src.oscsdkjava.domains;
+
+public enum LoanObjectives {
+    AJUDAR_UMA_OUTRA_PESSOA_DA_FAMILIA, 
+    BELEZA_E_SAUDE, 
+    COMECAR_UM_NOVO_NEGOCIO, 
+    COMPRAR_CONSERTAR_UM_CARRO, 
+    COMPRAR_REFORMAR_UMA_CASA, 
+    EDUCACAO, 
+    EVENTOS_FESTAS, 
+    FAZER_COMPRAS, 
+    FERIAS_VIAGENS, 
+    PAGAR_CONTAS, 
+    PAGAR_OUTRAS_DIVIDAS, 
+    OUTRAS
+}
