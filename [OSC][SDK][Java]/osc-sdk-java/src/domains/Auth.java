@@ -6,6 +6,7 @@ public class Auth implements Serializable{
     
     private String client_id;
     private String client_secret;
+    private String scopes[];
 
     public Auth(){
 
@@ -14,6 +15,7 @@ public class Auth implements Serializable{
     public Auth(String client_id, String client_secret){
         setClient_id(client_id);
         setClient_secret(client_secret);
+        scopes[0] = "api-external";
     }
 
     public void setClient_id(String client_id){
