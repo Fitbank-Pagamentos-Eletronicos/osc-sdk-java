@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+version "0.0.0-PREVIEW"
+group "br.com.fitbank"
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0' // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.14.1' // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.1' // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+}
+
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
