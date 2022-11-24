@@ -6,13 +6,11 @@ public class AuthSucess implements Serializable {
     private String access_token;
     private String expire_at;
 
-
-    
+    public AuthSucess() { }
     public AuthSucess(String access_token, String expire_at) {
         setAccess_token(access_token);
         setExpire_at(expire_at);
     }
-
 
     public String getAccess_token() {
         return access_token;

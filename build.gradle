@@ -2,12 +2,21 @@ buildscript {
     repositories {
         mavenCentral()
     }
+    dependencies {
+        classpath "gradle.plugin.ru.akman.vscode-tasks:vscode-tasks:0.4.0"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id "ru.akman.vscode-tasks" version "0.4.0"
 }
 
 version "0.0.0-PREVIEW"
 group "br.com.fitbank"
 
-apply plugin: 'java'
 
 repositories {
     mavenCentral()
@@ -17,9 +26,23 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.10.0' // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
     implementation 'com.fasterxml.jackson.core:jackson-core:2.14.1' // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.1' // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+
+    testImplementation platform('org.junit:junit-bom:5.9.1') // https://mvnrepository.com/artifact/org.junit/junit-bom
+    testImplementation 'org.junit.jupiter:junit-jupiter' // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter
 }
 
+test {
+    doFirst {
+        file('.env').readLines().each() {
+            if (!it.isEmpty() && !it.startsWith("#")) {
+                def (key, value) = it.tokenize('=')
+                environment key, value
+            }
+        }
+    }
 
-tasks.withType(Test) {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }

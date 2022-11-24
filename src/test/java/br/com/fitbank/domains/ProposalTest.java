@@ -19,7 +19,7 @@ public class ProposalTest {
         ConsumerUnit consumerUnit = new ConsumerUnit("number");
         Business business = new Business(Occupation.APOSENTADO, Profession.ACOUGUEIRO, "company name", "phone", "income", EmploymentSince.BETWEEN_FIVE_AND_TEN_YEARS, "payday", "benefit Number", "ZipCode", "adress", "number ", "complement", "district", State.AC, new City("city"));
         Bank bank = new Bank(Banks.CODE_001, AccountType.CONTA_CORRENTE_CONJUNTA, "agency", "account");
-        domains.Reference reference = new domains.Reference("name", "phone");
+        Reference reference = new Reference("name", "phone");
         Products products = new Products(new ProductAuto(ProductType.CARD, 1111, "vehicle brand", "vehicle Model", 2222, "vehicle model year", "code fipe", 3333));
 
         Proposal proposal = new Proposal(mother, gender, hometownState, hometown, education, relationshipStatus, phoneLandline, identity, address, vehicle, consumerUnit, business, bank, reference, products);

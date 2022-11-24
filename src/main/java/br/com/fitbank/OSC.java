@@ -117,13 +117,8 @@ public class OSC {
       /* verifica se há autenticação e se o token ainda não expirou, caso o token seja valido retorna o token, caso o contra faz requisição de autenticação e retorna o token */
   
     public AuthSucess auth(String clientId , String clientSecret) throws IOException {
-        return OAuth.oAuth(clientId, clientSecret);
+        return OAuth.request(clientId, clientSecret);
     }
-
-    public AuthSucess auth(Auth auth) throws IOException {
-      return OAuth.oAuth(auth);
-    }
-      /* requisição de autenticação */
 }
   
 

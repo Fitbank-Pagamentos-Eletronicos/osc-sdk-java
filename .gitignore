@@ -2,3 +2,5 @@
 .vscode
 .gradle
 *.iml
+.env
+build
