@@ -10,6 +10,9 @@ The workspace contains two folders by default, where:
 - `./src/test/java`: the folder to maintain tests
 - `./gradle`: gradle wraper
 
+## To test project
+
+- `./gradlew test`
 ## References
 
 1. https://developers.easycredito.com.br/

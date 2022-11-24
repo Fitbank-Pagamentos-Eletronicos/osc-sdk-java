@@ -17,6 +17,11 @@ plugins {
 version "0.0.0-PREVIEW"
 group "br.com.fitbank"
 
+java {
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(18))
+  }
+}
 
 repositories {
     mavenCentral()
