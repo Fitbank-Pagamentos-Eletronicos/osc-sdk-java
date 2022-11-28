@@ -71,10 +71,10 @@ public class OSCTest {
 
             String token = osc.getToken();
             assertNotNull(token);
-        } catch (IOException e){
-            assertEquals(e.getMessage(), "{\"message\":\"User not found\"}");
         } catch (RuntimeException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -89,10 +89,10 @@ public class OSCTest {
             }
             String token = osc.getToken();
             assertNotNull(token);
-        } catch (IOException e){
-            assertEquals(e.getMessage(), "{\"message\":\"User not found\"}");
         } catch (RuntimeException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
