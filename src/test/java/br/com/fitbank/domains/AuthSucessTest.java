@@ -18,7 +18,7 @@ public class AuthSucessTest {
 
         AuthSucess newAuthSucess = JSON.getGson().fromJson(s, AuthSucess.class);
         System.out.println(newAuthSucess);
-        System.out.println(newAuthSucess.getAccess_token());
-        System.out.println(newAuthSucess.getExpire_at());
+        System.out.println(newAuthSucess.getAccessToken());
+        System.out.println(newAuthSucess.getExpireAt());
     }
 }

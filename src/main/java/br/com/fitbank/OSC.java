@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.Normalizer;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
 
 import br.com.fitbank.domains.*;
@@ -67,11 +66,11 @@ public class OSC {
 
 
     public String getToken() throws IOException {
-        if (this.authToken == null || this.authToken.getExpire_at().compareTo(Instant.now()) <= 0 ) {
+        if (this.authToken == null || this.authToken.getExpireAt().compareTo(Instant.now()) <= 0 ) {
             this.authToken = this.auth();
         }
 
-        return this.authToken.getAccess_token();
+        return this.authToken.getAccessToken();
     }
 
     public AuthSucess auth() throws IOException {

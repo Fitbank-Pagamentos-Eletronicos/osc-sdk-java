@@ -14,8 +14,8 @@ public class OAuthTest {
         try {
             AuthSucess response = OAuth.request(client_id, client_secret);
 
-            assertNotNull(response.getAccess_token());
-            assertNotNull(response.getExpire_at());
+            assertNotNull(response.getAccessToken());
+            assertNotNull(response.getExpireAt());
         } catch (IOException e){
             assertEquals(e.getMessage(), "{\"message\":\"User not found\"}");
         }
@@ -28,8 +28,8 @@ public class OAuthTest {
         try {
             AuthSucess response = OAuth.request(client_id, client_secret);
 
-            assertNotNull(response.getAccess_token());
-            assertNotNull(response.getExpire_at());
+            assertNotNull(response.getAccessToken());
+            assertNotNull(response.getExpireAt());
         } catch (IOException e){
             assertEquals(e.getMessage(), "{\"message\":\"User not found\"}");
         }

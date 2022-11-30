@@ -1,31 +1,36 @@
 package br.com.fitbank.domains;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.time.Instant;
 
 public class AuthSucess implements Serializable {
-    private String access_token;
-    private Instant expire_at;
+
+    @SerializedName("access_token")
+    private String accessToken;
+    @SerializedName("expire_at")
+    private Instant expireAt;
 
     public AuthSucess() { }
-    public AuthSucess(String access_token, String expire_at) {
-        setAccess_token(access_token);
-        setExpire_at(expire_at);
+    public AuthSucess(String accessToken, String expireAt) {
+        setAccessToken(accessToken);
+        setExpireAt(expireAt);
     }
 
-    public String getAccess_token() {
-        return access_token;
+    public String getAccessToken() {
+        return accessToken;
     }
-    public void setAccess_token(String access_token) {
-        this.access_token = access_token;
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
-    public Instant getExpire_at() {
-        return expire_at;
+    public Instant getExpireAt() {
+        return expireAt;
     }
-    public void setExpire_at(Instant expire_at) {
-        this.expire_at = expire_at;
+    public void setExpireAt(Instant expireAt) {
+        this.expireAt = expireAt;
     }
-    public void setExpire_at(String expire_at) {
-        this.expire_at = Instant.parse(expire_at);
+    public void setExpireAt(String expireAt) {
+        this.expireAt = Instant.parse(expireAt);
     }
 }

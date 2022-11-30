@@ -18,3 +18,4 @@ The workspace contains two folders by default, where:
 1. https://developers.easycredito.com.br/
 2. https://docs.gradle.org/current/userguide/getting_started.html
 3. https://junit.org/junit5/docs/current/user-guide/
+4. https://github.com/google/gson
