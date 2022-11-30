@@ -1,10 +1,10 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
 
 public class AuthSucessTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String access_token = "token";
         String expire_at = "expire";
 
@@ -12,11 +12,11 @@ public class AuthSucessTest {
         System.out.println(authSucess);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(authSucess);
+        String s = JSON.getGson().toJson(authSucess);
         System.out.println(s);
         System.out.println("_______");
 
-        AuthSucess newAuthSucess = new ObjectMapper().readValue(s, AuthSucess.class);
+        AuthSucess newAuthSucess = JSON.getGson().fromJson(s, AuthSucess.class);
         System.out.println(newAuthSucess);
         System.out.println(newAuthSucess.getAccess_token());
         System.out.println(newAuthSucess.getExpire_at());

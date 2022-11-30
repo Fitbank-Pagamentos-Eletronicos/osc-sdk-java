@@ -1,21 +1,22 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
+
+
+import br.com.fitbank.utils.JSON;
 
 public class LogDataTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         LogData logData = new LogData(0, 0, "ocourrence date", "user Agent", "ip ip ip", "mac mac mac");
 
         System.out.println(logData);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(logData);
+        String s = JSON.getGson().toJson(logData);
         System.out.println(s);
         System.out.println("_______");
 
-        LogData newLD = new ObjectMapper().readValue(s, LogData.class);
+        LogData newLD = JSON.getGson().fromJson(s, LogData.class);
         System.out.println(newLD);
         System.out.println(newLD.getIp());
         System.out.println(newLD.getLatitude());

@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
 
 
 public class ProposalBankAccountTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String mother = "mother";
         Gender gender = Gender.MASCULINO;
         Nationality nationality = Nationality.BRASILEIRO;
@@ -20,11 +21,11 @@ public class ProposalBankAccountTest {
         System.out.println(proposalBankAccount);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(proposalBankAccount);
+        String s = JSON.getGson().toJson(proposalBankAccount);
         System.out.println(s);
         System.out.println("_______");
 
-        ProposalBankAccount newProposal = new ObjectMapper().readValue(s, ProposalBankAccount.class);
+        ProposalBankAccount newProposal = JSON.getGson().fromJson(s, ProposalBankAccount.class);
         System.out.println(newProposal);
     }
 }

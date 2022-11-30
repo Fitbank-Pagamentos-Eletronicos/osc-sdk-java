@@ -1,12 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
 
 
 public class ProductAutoTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         ProductType type = ProductType.CARD;
         float value = (float) 25.05;
         String vehicleBrand = "brand";
@@ -20,11 +20,11 @@ public class ProductAutoTest {
         System.out.println(productAuto);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(productAuto);
+        String s = JSON.getGson().toJson(productAuto);
         System.out.println(s);
         System.out.println("_______");
 
-        ProductAuto newProductAuto = new ObjectMapper().readValue(s, ProductAuto.class);
+        ProductAuto newProductAuto = JSON.getGson().fromJson(s, ProductAuto.class);
         System.out.println(newProductAuto);
         System.out.println(newProductAuto.getType());
         System.out.println(newProductAuto.getValue());

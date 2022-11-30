@@ -1,21 +1,20 @@
 package br.com.fitbank.domains;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 public class Pipeline implements Serializable{
     private String id;
     private String status;
     private String cpf;
     private String name;
-    private String dateCreated;
-    private String lastUpdated;
+    private Instant dateCreated;
+    private Instant lastUpdated;
 
 
-    public Pipeline(){
+    public Pipeline(){ }
 
-    }
-
-    public Pipeline(String id, String status, String cpf, String name, String dateCreated, String lastUpdated) {
+    public Pipeline(String id, String status, String cpf, String name, Instant dateCreated, Instant lastUpdated) {
         setId(id);
         setStatus(status);
         setCpf(cpf);
@@ -50,16 +49,16 @@ public class Pipeline implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-    public String getDateCreated() {
+    public Instant getDateCreated() {
         return dateCreated;
     }
-    public void setDateCreated(String dateCreated) {
+    public void setDateCreated(Instant dateCreated) {
         this.dateCreated = dateCreated;
     }
-    public String getLastUpdated() {
+    public Instant getLastUpdated() {
         return lastUpdated;
     }
-    public void setLastUpdated(String lastUpdated) {
+    public void setLastUpdated(Instant lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 

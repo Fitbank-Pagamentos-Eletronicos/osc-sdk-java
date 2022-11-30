@@ -3,9 +3,8 @@ package br.com.fitbank.requests;
 import java.io.IOException;
 import java.util.Base64;
 
-import br.com.fitbank.domains.Auth;
 import br.com.fitbank.domains.AuthSucess;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import br.com.fitbank.utils.JSON;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -21,7 +20,7 @@ public class OAuth{
     
     OkHttpClient client = new OkHttpClient().newBuilder().build();
     MediaType mediaType = MediaType.parse("application/json");
-    RequestBody formBody = RequestBody.create("{\"scopes\": [\"api-external\"]}", mediaType);
+    RequestBody formBody = RequestBody.create("{\"scope\": \"api-external\"}", mediaType);
     Request request = new Request.Builder()
       .method("POST", formBody)
       .addHeader("Authorization", "Basic " + encodedString)
@@ -36,7 +35,7 @@ public class OAuth{
         throw new IOException(responseString);
       }
 
-      return new ObjectMapper().readValue(responseString, AuthSucess.class);
+      return JSON.getGson().fromJson(responseString, AuthSucess.class);
   }
 
 }

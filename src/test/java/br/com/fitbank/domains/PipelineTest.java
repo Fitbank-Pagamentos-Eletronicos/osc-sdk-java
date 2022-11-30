@@ -1,27 +1,30 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
+
+import java.time.Instant;
 
 
 public class PipelineTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String id = "id";
         String status = "status";
         String cpf = "cpf";
         String name = "name";
-        String dateCreated = "date created";
-        String lastUpdated = "last update";
+        Instant dateCreated = Instant.now();
+        Instant lastUpdated = Instant.now();
 
         Pipeline pipeline = new Pipeline(id, status, cpf, name, dateCreated, lastUpdated);
         System.out.println(pipeline);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(pipeline);
+        String s = JSON.getGson().toJson(pipeline);
         System.out.println(s);
         System.out.println("_______");
 
-        Pipeline newPipeline = new ObjectMapper().readValue(s, Pipeline.class);
+        Pipeline newPipeline = JSON.getGson().fromJson(s, Pipeline.class);
         System.out.println(newPipeline);
 
     }

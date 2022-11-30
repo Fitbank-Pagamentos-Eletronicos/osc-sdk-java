@@ -1,11 +1,10 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
+import br.com.fitbank.utils.JSON;
 
 public class BusinessTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         Occupation occupation = Occupation.APOSENTADO;
         Profession profession = Profession.ACOUGUEIRO;
         String companyName = "company name";
@@ -27,11 +26,11 @@ public class BusinessTest {
         System.out.println(business);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(business);
+        String s = JSON.getGson().toJson(business);
         System.out.println(s);
         System.out.println("_______");
 
-        Business newBusiness = new ObjectMapper().readValue(s, Business.class);
+        Business newBusiness = JSON.getGson().fromJson(s, Business.class);
         System.out.println(newBusiness);
     }
 }

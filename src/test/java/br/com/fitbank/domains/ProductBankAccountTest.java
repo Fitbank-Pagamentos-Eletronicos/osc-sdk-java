@@ -1,22 +1,23 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
 
 
 public class ProductBankAccountTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String type = "type";
 
         ProductBankAccount productBankAccount = new ProductBankAccount(type);
         System.out.println(productBankAccount);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(productBankAccount);
+        String s = JSON.getGson().toJson(productBankAccount);
         System.out.println(s);
         System.out.println("_______");
 
-        ProductBankAccount newProductBankAccount = new ObjectMapper().readValue(s, ProductBankAccount.class);
+        ProductBankAccount newProductBankAccount = JSON.getGson().fromJson(s, ProductBankAccount.class);
         System.out.println(newProductBankAccount);
         System.out.println(newProductBankAccount.getType());
 

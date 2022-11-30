@@ -1,7 +1,8 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
 
 
 
@@ -31,21 +32,11 @@ public class SignupMatchTest {
         System.out.println(signupMatch);
         System.out.println("_______");
 
-        String s = null;
-        try {
-            s = new ObjectMapper().writeValueAsString(signupMatch);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
+        String s = JSON.getGson().toJson(signupMatch);
         System.out.println(s);
         System.out.println("_______");
 
-        SignupMatch newSignupMatch = null;
-        try {
-            newSignupMatch = new ObjectMapper().readValue(s, SignupMatch.class);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
+        SignupMatch newSignupMatch = JSON.getGson().fromJson(s, SignupMatch.class);
         System.out.println(newSignupMatch);
     }
 }

@@ -1,10 +1,10 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
 
 public class BankAccountTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String customerServiceNumber = "customer Service Number";
         String product = "product";
         int productId = 1111;
@@ -19,11 +19,11 @@ public class BankAccountTest {
         System.out.println(bankAccount);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(bankAccount);
+        String s = JSON.getGson().toJson(bankAccount);
         System.out.println(s);
         System.out.println("_______");
 
-        BankAccount newBankAccount = new ObjectMapper().readValue(s, BankAccount.class);
+        BankAccount newBankAccount = JSON.getGson().fromJson(s, BankAccount.class);
         System.out.println(newBankAccount);
     }
 }

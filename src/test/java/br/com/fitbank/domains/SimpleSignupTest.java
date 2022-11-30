@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
 
 
 public class SimpleSignupTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
 
         String cpf = "01992586357";
         String name = "nome";
@@ -26,11 +27,11 @@ public class SimpleSignupTest {
         System.out.println(S.getLogData());
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(S);
+        String s = JSON.getGson().toJson(S);
         System.out.println(s);
         System.out.println("_______");
 
-        SimpleSignup newS = new ObjectMapper().readValue(s, SimpleSignup.class);
+        SimpleSignup newS = JSON.getGson().fromJson(s, SimpleSignup.class);
         System.out.println(newS);
         System.out.println(newS.getCpf());
         System.out.println(newS.getName());

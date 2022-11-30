@@ -1,22 +1,21 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
+import br.com.fitbank.utils.JSON;
 
 public class CityTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String city2 = "city";
         City city = new City(city2);
 
         System.out.println(city);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(city);
+        String s = JSON.getGson().toJson(city);
         System.out.println(s);
         System.out.println("_______");
 
-        City newCity = new ObjectMapper().readValue(s, City.class);
+        City newCity = JSON.getGson().fromJson(s, City.class);
         System.out.println(newCity);
     }
 }

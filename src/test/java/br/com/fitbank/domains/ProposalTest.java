@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
 
 
 public class ProposalTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String mother = "mother";
         Gender gender = Gender.MASCULINO;
         State hometownState = State.AC;
@@ -27,11 +28,11 @@ public class ProposalTest {
         System.out.println(proposal);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(proposal);
+        String s = JSON.getGson().toJson(proposal);
         System.out.println(s);
         System.out.println("_______");
 
-        Proposal newProposal = new ObjectMapper().readValue(s, Proposal.class);
+        Proposal newProposal = JSON.getGson().fromJson(s, Proposal.class);
         System.out.println(newProposal);
     }
 }

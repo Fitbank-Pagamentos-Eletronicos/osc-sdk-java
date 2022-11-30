@@ -1,21 +1,21 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
 
 
 public class BorrowerInfoTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         BorrowerInfo borrowerInfo = new BorrowerInfo(true, false);
 
         System.out.println(borrowerInfo);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(borrowerInfo);
+        String s = JSON.getGson().toJson(borrowerInfo);
         System.out.println(s);
         System.out.println("_______");
 
-        BorrowerInfo newBorrowerInfo = new ObjectMapper().readValue(s, BorrowerInfo.class);
+        BorrowerInfo newBorrowerInfo = JSON.getGson().fromJson(s, BorrowerInfo.class);
         System.out.println(newBorrowerInfo);
         System.out.println(newBorrowerInfo.isRegistred());
         System.out.println(newBorrowerInfo.isBlocked());

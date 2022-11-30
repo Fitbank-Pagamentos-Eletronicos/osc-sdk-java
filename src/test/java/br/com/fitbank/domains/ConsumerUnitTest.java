@@ -1,11 +1,10 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
+import br.com.fitbank.utils.JSON;
 
 public class ConsumerUnitTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String number = "number";
 
         ConsumerUnit consumerUnit = new ConsumerUnit(number);
@@ -13,11 +12,11 @@ public class ConsumerUnitTest {
         System.out.println(consumerUnit);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(consumerUnit);
+        String s = JSON.getGson().toJson(consumerUnit);
         System.out.println(s);
         System.out.println("_______");
 
-        ConsumerUnit newConsumerUnit = new ObjectMapper().readValue(s, ConsumerUnit.class);
+        ConsumerUnit newConsumerUnit = JSON.getGson().fromJson(s, ConsumerUnit.class);
         System.out.println(newConsumerUnit);
     }
 }

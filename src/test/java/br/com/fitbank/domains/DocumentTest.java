@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 
+
+
+import br.com.fitbank.utils.JSON;
 public class DocumentTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         DocumentType type = DocumentType.ADDRESS_PROOF;
         MimeType mimeType = MimeType.CODE_01;
         String name = "name";
@@ -16,11 +17,11 @@ public class DocumentTest {
         System.out.println(document);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(document);
+        String s = JSON.getGson().toJson(document);
         System.out.println(s);
         System.out.println("_______");
 
-        Document newDocument = new ObjectMapper().readValue(s, Document.class);
+        Document newDocument = JSON.getGson().fromJson(s, Document.class);
         System.out.println(newDocument);
     }
 }

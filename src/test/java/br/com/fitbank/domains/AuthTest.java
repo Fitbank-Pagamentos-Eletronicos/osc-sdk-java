@@ -1,12 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
 
 public class AuthTest {
 
 
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String client_id = "00000001";
         String client_secret = "1111111110";
 
@@ -15,11 +15,11 @@ public class AuthTest {
         System.out.println(auth);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(auth);
+        String s = JSON.getGson().toJson(auth);
         System.out.println(s);
         System.out.println("_______");
 
-        Auth newAuth = new ObjectMapper().readValue(s, Auth.class);
+        Auth newAuth = JSON.getGson().fromJson(s, Auth.class);
         System.out.println(newAuth);
         System.out.println(newAuth.getClient_id());
         System.out.println(newAuth.getClient_secret());

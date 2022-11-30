@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
 
 
 public class ProductLoanTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         ProductType type = ProductType.LOAN;
         float value = 444;
         int installments = 111;
@@ -15,11 +16,11 @@ public class ProductLoanTest {
         System.out.println(productLoan);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(productLoan);
+        String s = JSON.getGson().toJson(productLoan);
         System.out.println(s);
         System.out.println("_______");
 
-        ProductLoan newProductLoan = new ObjectMapper().readValue(s, ProductLoan.class);
+        ProductLoan newProductLoan = JSON.getGson().fromJson(s, ProductLoan.class);
         System.out.println(newProductLoan);
         System.out.println(newProductLoan.getType());
         System.out.println(newProductLoan.getValue());

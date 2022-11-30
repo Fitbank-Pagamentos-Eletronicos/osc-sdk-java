@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
 
 public class ProductsTest {
 
-    public static void main(String[] args) throws  JsonProcessingException {
+    public static void main(String[] args) {
         ProductLoan productLoan = new ProductLoan(ProductType.LOAN, 100, 999);
         ProductCard productCard = new ProductCard(ProductType.CARD, Network.ELO, "pay day");
         ProductAuto productAuto = new ProductAuto(ProductType.REFINANCING_AUTO, 134, "vehicle brand", "model", 150, "model year", "fipe", 750);
@@ -22,10 +23,10 @@ public class ProductsTest {
         System.out.println("products Loan:" + productsL);
         System.out.println("_______");
 
-        String sA = new ObjectMapper().writeValueAsString(productsA);
-        String sC = new ObjectMapper().writeValueAsString(productsC);
-        String sH = new ObjectMapper().writeValueAsString(productsH);
-        String sL = new ObjectMapper().writeValueAsString(productsL);
+        String sA = JSON.getGson().toJson(productsA);
+        String sC = JSON.getGson().toJson(productsC);
+        String sH = JSON.getGson().toJson(productsH);
+        String sL = JSON.getGson().toJson(productsL);
 
         System.out.println("products Auto:" + sA);
         System.out.println("products Card:" + sC);
@@ -33,10 +34,10 @@ public class ProductsTest {
         System.out.println("products Loan:" + sL);
         System.out.println("_______");
 
-        Products newProductsA = new ObjectMapper().readValue(sA, Products.class);
-        Products newProductsC = new ObjectMapper().readValue(sC, Products.class);
-        Products newProductsH = new ObjectMapper().readValue(sH, Products.class);
-        Products newProductsL = new ObjectMapper().readValue(sL, Products.class);
+        Products newProductsA = JSON.getGson().fromJson(sA, Products.class);
+        Products newProductsC = JSON.getGson().fromJson(sC, Products.class);
+        Products newProductsH = JSON.getGson().fromJson(sH, Products.class);
+        Products newProductsL = JSON.getGson().fromJson(sL, Products.class);
         System.out.println("products Auto:" + newProductsA);
         System.out.println(newProductsA.getProductAuto());
 

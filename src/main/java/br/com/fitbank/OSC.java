@@ -2,145 +2,82 @@ package br.com.fitbank;
 
 import java.io.IOException;
 import java.text.Normalizer;
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 import br.com.fitbank.domains.*;
 import br.com.fitbank.requests.OAuth;
 
 
+
 public class OSC {
-    private static OSC[] instances;                     /* static private, armazena instancias da classe */
+    private static final ArrayList<OSC> instances = new ArrayList<>();
     private static final String default_instance_name = "default";  /* static private, define nome padrão */
-    private static final String[] default_scopes = {"api-external"};  /* static private, define nome padrão */
 
-    public String name;
-    public String client_id;
-    public String client_secret;
-    public String[] scopes;
+    private final String name;
+    private final String client_id;
+    private final String client_secret;
 
-    public OSC(String name, String client_id, String client_secret, String[] scopes) {
-        this.name = normalize(name);
+    private AuthSucess authToken;
+
+    public OSC(String name, String client_id, String client_secret){
+        this.name = name;
         this.client_id = client_id;
         this.client_secret = client_secret;
-        this.scopes = scopes;
-        //AuthSucess auth_response;
-        /* storage */
     }
 
-    public String normalize(String name) {
-        /* lowcase, trim, remover acentos, converter [^A-z0-9] para [-] */
+    public String normalize(String name){
         name = name.toLowerCase();
         name = Normalizer.normalize(name, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
         name = Normalizer.normalize(name, Normalizer.Form.NFD).replaceAll("[^A-z0-9]", "-");
         return name;
     }
 
-    public static OSC createIntance(String name, String client_id, String client_secret, String[] scopes) {
-        if (instances == null) {
-            OSC osc = new OSC(name, client_id, client_secret, scopes);
-            instances = new OSC[]{osc};
-            return osc;
-        } else {
-            if (OSC.getIntance(name) == null) {
-                OSC osc = new OSC(name, client_id, client_secret, scopes);
-                OSC.instances = Arrays.copyOf(OSC.instances, OSC.instances.length + 1); //create new array from old array and allocate one more element
-                OSC.instances[OSC.instances.length - 1] = osc;
-                return osc;
-            }
-            return OSC.getIntance(name);
+    public static OSC createIntance(String name, String client_id, String client_secret) throws RuntimeException {
+        OSC osc = OSC.getIntance(name);
+
+        if (osc != null){
+          throw new RuntimeException("Instance named: " + name + " aready exists.");
         }
 
-        /* validar atributos, verificar se ja existe instancia com o mesmo nome, chamar construtor e armazenar instancia na variavel estatica */
+        osc = new OSC(name, client_id, client_secret);
+
+        OSC.instances.add(osc);
+        return osc;
     }
 
-    public static OSC createIntance(String name, String client_id, String client_secret) {
-        if (instances == null) {
-            OSC osc = new OSC(name, client_id, client_secret, default_scopes);
-            instances = new OSC[]{osc};
-            return osc;
-        } else {
-            if (OSC.getIntance(name) == null) {
-                OSC osc = new OSC(name, client_id, client_secret, default_scopes);
-                OSC.instances = Arrays.copyOf(OSC.instances, OSC.instances.length + 1); //create new array from old array and allocate one more element
-                OSC.instances[OSC.instances.length - 1] = osc;
-                return osc;
-            }
-            return OSC.getIntance(name);
-        }
-        /* validar atributos, verificar se ja existe instancia com o mesmo nome, chamar construtor e armazenar instancia na variavel estatica */
+    public static OSC createIntance(String client_id, String client_secret) throws RuntimeException {
+        return OSC.createIntance(default_instance_name, client_id, client_secret);
     }
 
-    public static OSC createIntance(String client_id, String client_secret, String[] scopes) {
-        if (instances == null) {
-            OSC osc = new OSC(default_instance_name, client_id, client_secret, scopes);
-            instances = new OSC[]{osc};
-            return osc;
-        } else {
-            if (OSC.getIntance() == null) {
-                OSC osc = new OSC(default_instance_name, client_id, client_secret, scopes);
-                OSC.instances = Arrays.copyOf(OSC.instances, OSC.instances.length + 1); //create new array from old array and allocate one more element
-                OSC.instances[OSC.instances.length - 1] = osc;
-                return osc;
-            }
-            return OSC.getIntance();
-        }
-        /* validar atributos, verificar se ja existe instancia com o mesmo nome, chamar construtor e armazenar instancia na variavel estatica */
-    }
-
-    public static OSC createIntance(String client_id, String client_secret) {
-        if (instances == null) {
-            OSC osc = new OSC(default_instance_name, client_id, client_secret, default_scopes);
-            instances = new OSC[]{osc};
-            return osc;
-        } else {
-            if (OSC.getIntance() == null) {
-                OSC osc = new OSC(default_instance_name, client_id, client_secret, default_scopes);
-                OSC.instances = Arrays.copyOf(OSC.instances, OSC.instances.length + 1); //create new array from old array and allocate one more element
-                OSC.instances[OSC.instances.length - 1] = osc;
-                return osc;
-            }
-            return OSC.getIntance();
-        }
-        /* validar atributos, verificar se ja existe instancia com o mesmo nome, chamar construtor e armazenar instancia na variavel estatica */
-    }
-
-    public static OSC getIntance() {
-        if (instances == null){
-            return null;
-        }
-        for (int i = 0; i < instances.length; i++) {
-            if (instances[i].name == default_instance_name) {
-                return instances[i];
+    public static OSC getIntance(String name){
+        for (OSC instance : instances) {
+            if (Objects.equals(instance.name, name)) {
+                return instance;
             }
         }
         return null;
-        /* verificar se ja existe instancia com o nome default, se sim retorna a instancia */
     }
 
-    public static OSC getIntance(String name) {
-        if (instances == null){
-            return null;
-        }
-        for (int i = 0; i < instances.length; i++) {
-            if (instances[i].name == name) {
-                return instances[i];
-            }
-        }
-        return null;
-        /* verificar se ja existe instancia com o mesmo nome, se sim retorna a instancia */
+    public static OSC getIntance(){
+        return OSC.getIntance(default_instance_name);
     }
 
 
     public String getToken() throws IOException {
-        AuthSucess a = auth(this.client_id, this.client_secret);
+        if (this.authToken == null || this.authToken.getExpire_at().compareTo(Instant.now()) <= 0 ) {
+            this.authToken = this.auth();
+        }
 
-        return a.getAccess_token();
+        return this.authToken.getAccess_token();
     }
-    /* verifica se há autenticação e se o token ainda não expirou, caso o token seja valido retorna o token, caso o contra faz requisição de autenticação e retorna o token */
 
-    public AuthSucess auth(String clientId, String clientSecret) throws IOException {
-        return OAuth.request(clientId, clientSecret);
+    public AuthSucess auth() throws IOException {
+        return OAuth.request(this.client_id, this.client_secret);
     }
+
 }
   
 

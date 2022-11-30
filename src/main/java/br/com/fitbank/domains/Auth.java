@@ -6,7 +6,7 @@ public class Auth implements Serializable{
     
     private String client_id;
     private String client_secret;
-    private String scopes[];
+    private String[] scopes;
 
     public Auth(){
 

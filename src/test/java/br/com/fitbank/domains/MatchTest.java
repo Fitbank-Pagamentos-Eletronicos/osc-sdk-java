@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+
+import br.com.fitbank.utils.JSON;
 
 
 public class MatchTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         MatchLoan matchLoan = new MatchLoan(1111, "name", "logo", 2222, 3333, 4444, 5555, 6666);
         MatchCard matchCard = new MatchCard(1111, "name", "logo", 2222, Network.ELO);
         MatchAuto matchAuto = new MatchAuto(1111, "name", "logo", 2222, 3333, 4444, 5555, 6666);
@@ -22,20 +23,20 @@ public class MatchTest {
         System.out.println(matchH);
         System.out.println("_______");
 
-        String sL = new ObjectMapper().writeValueAsString(matchL);
-        String sC = new ObjectMapper().writeValueAsString(matchC);
-        String sA = new ObjectMapper().writeValueAsString(matchA);
-        String sH = new ObjectMapper().writeValueAsString(matchH);
+        String sL = JSON.getGson().toJson(matchL);
+        String sC = JSON.getGson().toJson(matchC);
+        String sA = JSON.getGson().toJson(matchA);
+        String sH = JSON.getGson().toJson(matchH);
         System.out.println(sL);
         System.out.println(sC);
         System.out.println(sA);
         System.out.println(sH);
         System.out.println("_______");
 
-        Match newMatchL = new ObjectMapper().readValue(sL, Match.class);
-        Match newMatchC = new ObjectMapper().readValue(sC, Match.class);
-        Match newMatchA = new ObjectMapper().readValue(sA, Match.class);
-        Match newMatchH = new ObjectMapper().readValue(sH, Match.class);
+        Match newMatchL = JSON.getGson().fromJson(sL, Match.class);
+        Match newMatchC = JSON.getGson().fromJson(sC, Match.class);
+        Match newMatchA = JSON.getGson().fromJson(sA, Match.class);
+        Match newMatchH = JSON.getGson().fromJson(sH, Match.class);
         System.out.println(newMatchL);
         System.out.println(newMatchC);
         System.out.println(newMatchA);

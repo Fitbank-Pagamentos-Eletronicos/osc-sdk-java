@@ -1,11 +1,10 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
+import br.com.fitbank.utils.JSON;
 
 public class ContractTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String aceptedCheckSum = "acepted check Sum";
         LogData logData = new LogData(1111, 2222, "ocurrence Date", "User Agent", "ip", "mac");
 
@@ -14,11 +13,11 @@ public class ContractTest {
         System.out.println(contract);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(contract);
+        String s = JSON.getGson().toJson(contract);
         System.out.println(s);
         System.out.println("_______");
 
-        Contract newContract = new ObjectMapper().readValue(s, Contract.class);
+        Contract newContract = JSON.getGson().fromJson(s, Contract.class);
         System.out.println(newContract);
     }
 }

@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
+
+
+import br.com.fitbank.utils.JSON;
 
 public class MatchAutoTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         Integer productId = 1111;
         String name = "name";
         String logo = "logo";
@@ -20,11 +21,11 @@ public class MatchAutoTest {
         System.out.println(matchAuto);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(matchAuto);
+        String s = JSON.getGson().toJson(matchAuto);
         System.out.println(s);
         System.out.println("_______");
 
-        MatchAuto newMatchAuto = new ObjectMapper().readValue(s, MatchAuto.class);
+        MatchAuto newMatchAuto = JSON.getGson().fromJson(s, MatchAuto.class);
         System.out.println(newMatchAuto);
 
     }

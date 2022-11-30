@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.com.fitbank.utils.JSON;
+
 
 
 public class ProductHomeTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         ProductType type = ProductType.REFINANCING_HOME;
         float value = 403;
         int installments = 10;
@@ -17,11 +18,11 @@ public class ProductHomeTest {
         System.out.println(productHome);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(productHome);
+        String s = JSON.getGson().toJson(productHome);
         System.out.println(s);
         System.out.println("_______");
 
-        ProductHome newProductHome = new ObjectMapper().readValue(s, ProductHome.class);
+        ProductHome newProductHome = JSON.getGson().fromJson(s, ProductHome.class);
         System.out.println(newProductHome);
         System.out.println(newProductHome.getType());
         System.out.println(newProductHome.getValue());
