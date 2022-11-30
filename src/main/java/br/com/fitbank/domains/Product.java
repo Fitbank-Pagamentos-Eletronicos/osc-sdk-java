@@ -2,7 +2,9 @@ package br.com.fitbank.domains;
 
 import java.io.Serializable;
 
-public class Product implements Serializable{
+public class Product  implements Serializable{
+
+
     private int productId;
     private String name;
     private String logo;

@@ -2,7 +2,7 @@ package br.com.fitbank.domains;
 
 import java.io.Serializable;
 
-public class ProductHome implements Serializable{
+public class ProductHome  implements Serializable{
     private ProductType type;
     private float value;
     private int installments;
@@ -12,10 +12,12 @@ public class ProductHome implements Serializable{
     
     public ProductHome(){
 
+
     }
     
     public ProductHome(ProductType type, float value, int installments, RealEstateType realEstateType,
             float realEstateValue, float outstandingBalance) {
+
         setType(type);
         setValue(realEstateValue);
         setInstallments(installments);

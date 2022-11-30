@@ -1,7 +1,6 @@
 package br.com.fitbank.domains;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
@@ -22,7 +21,7 @@ public class LogDataTest {
         System.out.println(newLD.getLatitude());
         System.out.println(newLD.getLongitude());
         System.out.println(newLD.getMac());
-        System.out.println(newLD.getOcourrenceDate());
+        System.out.println(newLD.getOccurrenceDate());
         System.out.println(newLD.getUserAgent());
 
     }

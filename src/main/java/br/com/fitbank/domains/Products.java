@@ -11,22 +11,23 @@ public class Products implements Serializable{
     public Products(){
         
     }
+
     public Products(ProductLoan productLoan) {
         setProductLoan(productLoan);
-        
+
     }
     public Products(ProductCard productCard) {
-        
+
         setProductCard(productCard);
-        
+
     }
     public Products(ProductAuto productAuto) {
-        
+
         setProductAuto(productAuto);
-        
+
     }
     public Products(ProductHome productHome) {
-        
+
         setProductHome(productHome);
     }
 

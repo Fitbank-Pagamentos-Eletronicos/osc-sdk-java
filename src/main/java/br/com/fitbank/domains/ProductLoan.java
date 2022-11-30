@@ -2,17 +2,19 @@ package br.com.fitbank.domains;
 
 import java.io.Serializable;
 
-public class ProductLoan implements Serializable{
+public class ProductLoan  implements Serializable{
     private ProductType type;
     private float value;
     private int installments;
 
 
     public ProductLoan(){
-        
+
+
     }
     
     public ProductLoan(ProductType type, float value, int installments) {
+
         setType(type);
         setValue(value);
         setInstallments(installments);

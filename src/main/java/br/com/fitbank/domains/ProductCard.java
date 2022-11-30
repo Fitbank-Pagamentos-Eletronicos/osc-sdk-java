@@ -2,16 +2,18 @@ package br.com.fitbank.domains;
 
 import java.io.Serializable;
 
-public class ProductCard implements Serializable{
+public class ProductCard  implements Serializable{
     private ProductType type;
     private Network network;
     private String payDay;
 
     public ProductCard(){
 
+
     }
     
     public ProductCard(ProductType type, Network network, String payDay) {
+
         setType(type);
         setNetwork(network);
         setPayDay(payDay);

@@ -2,7 +2,7 @@ package br.com.fitbank.domains;
 
 import java.io.Serializable;
 
-public class ProductAuto implements Serializable{
+public class ProductAuto  implements Serializable{
     private ProductType type;
     private float value;
     private String vehicleBrand;
@@ -13,10 +13,11 @@ public class ProductAuto implements Serializable{
     private float vehicleFipeValue;
 
     public ProductAuto(){
-        
+
     }
     public ProductAuto(ProductType type, float value, String vehicleBrand, String vehicleModel, int installments,
             String vehicleModelYear, String codeFipe, float vehicleFipeValue) {
+
         setType(type);
         setValue(value);
         setVehicleBrand(vehicleBrand);

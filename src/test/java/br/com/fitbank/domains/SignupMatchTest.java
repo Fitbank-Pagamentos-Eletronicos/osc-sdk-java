@@ -1,11 +1,12 @@
 package br.com.fitbank.domains;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
+
 public class SignupMatchTest {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) {
         String cpf = "cpf";
         String name = "name";
         String birthday = "birthday";
@@ -22,7 +23,7 @@ public class SignupMatchTest {
         boolean hasVehicle = true;
         boolean hasAndroid = true;
         ProductHome productHome = new ProductHome(ProductType.REFINANCING_HOME, 12034, 23231, RealEstateType.apartment, 43434, 112222);
-        Products products = new Products(productHome);
+        Products[] products = new Products[]{new Products(productHome)};
         LogData logData = new LogData(1111, 2222, "ocourrence Date", "User Agent", "ip", "email");
 
         SignupMatch signupMatch = new SignupMatch(cpf, name, birthday, email, phone, zipCode, education, banks, occupation, income, hasCreditCard, hasRestriction, hasOwnHouse, hasVehicle, hasAndroid, products, logData);
@@ -30,11 +31,21 @@ public class SignupMatchTest {
         System.out.println(signupMatch);
         System.out.println("_______");
 
-        String s = new ObjectMapper().writeValueAsString(signupMatch);
+        String s = null;
+        try {
+            s = new ObjectMapper().writeValueAsString(signupMatch);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println(s);
         System.out.println("_______");
 
-        SignupMatch newSignupMatch = new ObjectMapper().readValue(s, SignupMatch.class);
+        SignupMatch newSignupMatch = null;
+        try {
+            newSignupMatch = new ObjectMapper().readValue(s, SignupMatch.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println(newSignupMatch);
     }
 }

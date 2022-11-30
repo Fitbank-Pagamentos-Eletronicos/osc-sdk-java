@@ -48,7 +48,7 @@ public class SimpleSignupTest {
         System.out.println(newS.getLogData().getLatitude());
         System.out.println(newS.getLogData().getLongitude());
         System.out.println(newS.getLogData().getMac());
-        System.out.println(newS.getLogData().getOcourrenceDate());
+        System.out.println(newS.getLogData().getOccurrenceDate());
         System.out.println(newS.getLogData().getUserAgent());
 
 

@@ -6,7 +6,7 @@ public class LogData implements Serializable{
 
     private float latitude;
     private float longitude;
-    private String ocourrenceDate;
+    private String occurrenceDate;
     private String userAgent;
     private String ip;
     private String mac;
@@ -15,10 +15,10 @@ public class LogData implements Serializable{
         
     }
 
-    public LogData(float latitude, float longitude, String ocourrenceDate, String userAgent, String ip, String mac){
+    public LogData(float latitude, float longitude, String occurrenceDate, String userAgent, String ip, String mac){
         setLatitude(latitude);
         setLongitude(longitude);
-        setOcourrenceDate(ocourrenceDate);
+        setOcourrenceDate(occurrenceDate);
         setUserAgent(userAgent);
         setIp(ip);
         setMac(mac);
@@ -38,11 +38,11 @@ public class LogData implements Serializable{
         this.longitude = longitude;
     }
 
-    public String getOcourrenceDate(){
-        return ocourrenceDate;
+    public String getOccurrenceDate(){
+        return occurrenceDate;
     }
     public void setOcourrenceDate(String ocourrenceDate) {
-        this.ocourrenceDate = ocourrenceDate;
+        this.occurrenceDate = ocourrenceDate;
     }
 
     public String getUserAgent(){

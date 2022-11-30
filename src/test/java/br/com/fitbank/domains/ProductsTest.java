@@ -1,13 +1,11 @@
 package br.com.fitbank.domains;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 
 public class ProductsTest {
 
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) throws  JsonProcessingException {
         ProductLoan productLoan = new ProductLoan(ProductType.LOAN, 100, 999);
         ProductCard productCard = new ProductCard(ProductType.CARD, Network.ELO, "pay day");
         ProductAuto productAuto = new ProductAuto(ProductType.REFINANCING_AUTO, 134, "vehicle brand", "model", 150, "model year", "fipe", 750);
