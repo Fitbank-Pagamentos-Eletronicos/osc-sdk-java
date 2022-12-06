@@ -19,9 +19,9 @@ public class BusinessTest {
         String complement = "complement";
         String district = "district";
         State state = State.AC;
-        City city = new City("cidade");
+        String city = "cidade";
 
-        Business business = new Business(occupation, profession, companyName, phone, income, employmentSince, payday, benefitNumber, zipCode, adress, number, complement, district, state, city);
+        Business business = new Business(occupation, profession, companyName, phone, income, payday, benefitNumber, zipCode, adress, number, complement, district, state, city);
 
         System.out.println(business);
         System.out.println("_______");

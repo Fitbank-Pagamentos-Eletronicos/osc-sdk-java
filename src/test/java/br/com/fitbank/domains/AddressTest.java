@@ -5,7 +5,7 @@ import br.com.fitbank.utils.JSON;
 
 public class AddressTest {
     public static void main(String[] args) {
-        Address address = new Address("zip Code", "Address", "complement", "district", State.AC, new City("CIDADE"), HomeType.ALUGADA, HomeSince.MAIOR_2_ANOS);
+        Address address = new Address("zip Code", "Address","2", "complement", "district", State.AC, "CIDADE", HomeType.ALUGADA, HomeSince.MAIOR_2_ANOS);
 
         System.out.println(address);
         System.out.println("_______");

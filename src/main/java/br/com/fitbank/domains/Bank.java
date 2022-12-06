@@ -3,7 +3,7 @@ package br.com.fitbank.domains;
 import java.io.Serializable;
 
 public class Bank implements Serializable{
-    private Banks bank;
+    private String bank;
     private AccountType type;
     private String agency;
     private String account;
@@ -11,17 +11,17 @@ public class Bank implements Serializable{
     public Bank(){
         
     }
-    public Bank(Banks bank, AccountType type, String agency, String account) {
+    public Bank(String bank, AccountType type, String agency, String account) {
         setBank(bank);
         setType(type);
         setAgency(agency);
         setAccount(account);
     }
 
-    public Banks getBank() {
+    public String getBank() {
         return bank;
     }
-    public void setBank(Banks bank) {
+    public void setBank(String bank) {
         this.bank = bank;
     }
     public AccountType getType() {
