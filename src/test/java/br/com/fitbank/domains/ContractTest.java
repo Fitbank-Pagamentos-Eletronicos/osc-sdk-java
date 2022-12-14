@@ -5,7 +5,7 @@ import br.com.fitbank.utils.JSON;
 
 public class ContractTest {
     public static void main(String[] args) {
-        String aceptedCheckSum = "acepted check Sum";
+        String[] aceptedCheckSum = {"acepted check Sum"};
         LogData logData = new LogData(1111, 2222, "ocurrence Date", "User Agent", "ip", "mac");
 
         Contract contract = new Contract(aceptedCheckSum, logData);

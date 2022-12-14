@@ -4,21 +4,21 @@ import java.io.Serializable;
 
 public class Contract implements Serializable{
     
-    private String aceptedCheckSum;
+    private String[] aceptedCheckSum;
     private LogData logData;
 
     public Contract(){
         
     }
-    public Contract(String acaceptedCheckSum, LogData logData){
+    public Contract(String[] acaceptedCheckSum, LogData logData){
         setAceptedCheckSum(acaceptedCheckSum);
         setLogData(logData);
     }
 
-    public String getAceptedCheckSum() {
+    public String[] getAceptedCheckSum() {
         return aceptedCheckSum;
     }
-    public void setAceptedCheckSum(String aceptedCheckSum) {
+    public void setAceptedCheckSum(String aceptedCheckSum[]) {
         this.aceptedCheckSum = aceptedCheckSum;
     }
     
