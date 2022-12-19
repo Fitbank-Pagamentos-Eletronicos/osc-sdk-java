@@ -20,7 +20,7 @@ public class PubSubRequest {
                 .method("GET", formBody)
                 .addHeader("Accept", "Bearer " + token)
                 .addHeader("Content-Type", "application/json")
-                .url("https://demo-api.easycredito.com.br/api/external//v2.1/pubsub")
+                .url("https://staging-api.easycredito.com.br/api/external//v2.1/pubsub")
                 .build();
 
         Response response = client.newCall(request).execute();

@@ -21,9 +21,10 @@ public class PubSubRequestTest {
 
             PubSubRequestReturn pubSubRequestReturn = PubSubRequest.request(osc);
 
-            assertNotNull(pubSubRequestReturn.getEnvironment());
-            assertNotNull(pubSubRequestReturn.getVersion());
-            assertNotNull(pubSubRequestReturn.getMessage());
+            assertNotNull(pubSubRequestReturn.getProject_id());
+            assertNotNull(pubSubRequestReturn.getService_account());
+            assertNotNull(pubSubRequestReturn.getSubscription_id());
+            assertNotNull(pubSubRequestReturn.getTopic_id());
 
 
         } catch (RuntimeException | IOException e) {
