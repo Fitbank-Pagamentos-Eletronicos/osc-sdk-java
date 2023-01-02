@@ -8,34 +8,34 @@ public class Business implements Serializable{
     private String companyName;
     private String phone;
     private String income;
-    private EmploymentSince employmentSince;
     private String payday;
+    //private EmploymentSince employmentSince;
     private String benefitNumber;
     private String zipCode;
-    private String adress;
+    private String address;
     private String number;
     private String complement;
     private String district;
     private State state;
-    private City city;
+    private String city;
 
     public Business(){
         
     }
 
     public Business(Occupation occupation, Profession profession, String companyName, String phone, String income,
-            EmploymentSince employmentSince, String payday, String benefitNumber, String zipCode, String adress,
-            String number, String complement, String district, State state, City city) {
+             String payday, String benefitNumber, String zipCode, String address,
+            String number, String complement, String district, State state, String city) {
         setOccupation(occupation);
         setProfession(profession);
         setCompanyName(companyName);
         setPhone(phone);
         setIncome(income);
-        setEmploymentSince(employmentSince);
+
         setPayday(payday);
         setBenefitNumber(benefitNumber);
         setZipCode(zipCode);
-        setAdress(adress);
+        setAddress(address);
         setNumber(number);
         setComplement(complement);
         setDistrict(district);
@@ -73,13 +73,7 @@ public class Business implements Serializable{
     public void setIncome(String income) {
         this.income = income;
     }
-    public EmploymentSince getEmploymentSince() {
-        return employmentSince;
-    }
-    public void setEmploymentSince(EmploymentSince employmentSince) {
-        this.employmentSince = employmentSince;
-    }
-    public String getPayday() {
+     public String getPayday() {
         return payday;
     }
     public void setPayday(String payday) {
@@ -97,11 +91,11 @@ public class Business implements Serializable{
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
     public String getNumber() {
         return number;
@@ -127,10 +121,10 @@ public class Business implements Serializable{
     public void setState(State state) {
         this.state = state;
     }
-    public City getCity() {
+    public String getCity() {
         return city;
     }
-    public void setCity(City city) {
+    public void setCity(String city) {
         this.city = city;
     }
 

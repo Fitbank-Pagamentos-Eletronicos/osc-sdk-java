@@ -5,20 +5,22 @@ import java.io.Serializable;
 public class Address implements Serializable {
     private String zipCode;
     private String address;
+    private String number;
     private String complement;
     private String district;
     private State state;
-    private City city;
+    private String city;
     private HomeType homeType;
     private HomeSince homeSince;
 
     public Address(){
         
     }
-    public Address(String zipCode, String address, String complement, String district, State state, City city,
+    public Address(String zipCode, String address,String number, String complement, String district, State state, String city,
             HomeType homeType, HomeSince homeSince) {
         setZipCode(zipCode);
         setAddress(address);
+        setNumber(number);
         setComplement(complement);
         setDistrict(district);
         setState(state);
@@ -42,6 +44,12 @@ public class Address implements Serializable {
     public String getComplement() {
         return complement;
     }
+    public String getNumber() {
+        return number;
+    }
+    public void setNumber(String number) {
+        this.number = number;
+    }
     public void setComplement(String complement) {
         this.complement = complement;
     }
@@ -57,10 +65,10 @@ public class Address implements Serializable {
     public void setState(State state) {
         this.state = state;
     }
-    public City getCity() {
+    public String getCity() {
         return city;
     }
-    public void setCity(City city) {
+    public void setCity(String city) {
         this.city = city;
     }
     public HomeType getHomeType() {

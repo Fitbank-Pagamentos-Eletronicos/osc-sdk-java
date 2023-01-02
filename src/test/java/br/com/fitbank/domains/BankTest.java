@@ -3,11 +3,9 @@ package br.com.fitbank.domains;
 
 import br.com.fitbank.utils.JSON;
 
-import br.com.fitbank.utils.JSON;
-
 public class BankTest {
     public static void main(String[] args) {
-        Bank bank = new Bank(Banks.CODE_001, AccountType.CONTA_CORRENTE_CONJUNTA, "agency", "account");
+        Bank bank = new Bank("001", AccountType.CONTA_CORRENTE_CONJUNTA, "agency", "account");
         System.out.println(bank);
         System.out.println("_______");
 

@@ -1,6 +1,5 @@
 package br.com.fitbank.utils;
 
-import br.com.fitbank.utils.JSON;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
