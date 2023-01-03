@@ -20,7 +20,7 @@ public class GetContractTest {
             osc = OSC.createIntance(client_id, client_secret);
             String s = " ";
             GetContract getContract = JSON.getGson().fromJson(s, GetContract.class);
-            GetContract getContract1 = br.com.fitbank.requests.GetContract.GetContract (osc, System.getenv("CUSTOM_SERVICE_NUMBER"));
+            br.com.fitbank.domains.GetContract getContract1 = br.com.fitbank.requests.GetContract.GetContract (osc, System.getenv("CUSTOM_SERVICE_NUMBER"));
 
             assertNotNull(getContract1.getContracts());
             assertNotNull(getContract1.getCustomerServiceNumber());
