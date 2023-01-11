@@ -444,7 +444,94 @@ sequenceDiagram
 ```
 #### Code
 ```Java
+public class SignupProposal {
+    
+    public Pipeline signupSuccessTest(String client_id, String client_secret, String client_Data) {
+        try {
+            
+            OSC osc = OSC.createIntance(client_id, client_secret);
+            SignupMatch signupMatch = JSON.getGson().fromJson(client_Data, SignupMatch.class);
+            return Signup.request(osc, signupMatch);
+            
+        } catch (RuntimeException | IOException e) {
+            e.printStackTrace();
+            assertNull(e);
+        }
+    }
+    
 
+        public pubSubRequestReturn Request(String client_id, String client_secret) {
+            try {
+                OSC osc = OSC.createIntance(client_id, client_secret);
+                return PubSubRequest.request(osc);
+
+            } catch (RuntimeException | IOException e) {
+                e.printStackTrace();
+                assertNull(e);
+            }
+        }
+    public Pipeline proposal(String client_id, String client_secret, Pipeline pipeline, String proposal_Data){
+        try {
+            OSC osc = OSC.createIntance(client_id, client_secret);
+            Proposal proposal = JSON.getGson().fromJson(proposal_Data, Proposal.class);
+            return br.com.fitbank.requests.Proposal.request(osc, proposal, pipeline.getID);
+            
+        } catch (RuntimeException | IOException e) {
+            e.printStackTrace();
+            assertNull(e);
+        }
+    }
+
+    public void listener() throws IOException, InterruptedException {
+        MessageReceiver receiver =
+                (PubsubMessage message, AckReplyConsumer consumer) -> {
+                    System.out.println("Id: " + message.getMessageId());
+                    System.out.println("Data: " + message.getData().toStringUtf8());
+                    consumer.ack();
+                };
+    
+        PubSubSubscription.subscriber("project-5341349585364433217", "callback-leonardo.sousa-sub", receiver);
+        TimeUnit.SECONDS.sleep(30);
+    }
+
+    public documentResponse Document(String client_id, String client_secret, Pipeline pipeline,String Document) throws IOException {
+        try {
+            osc = OSC.createIntance(client_id, client_secret);
+            br.com.fitbank.domains.Document document = JSON.getGson().fromJson(Document, br.com.fitbank.domains.Document.class);
+
+            DocumentResponse documentResponse = br.com.fitbank.requests.Document.putDocument(osc, document, pipeline_id);
+            return documentResponse;
+        } catch (RuntimeException | IOException e) {
+            e.printStackTrace();
+            assertNull(e);
+        }
+    }
+    public br.com.fitbank.domains.GetContract getContractTest(String client_id, String client_secret) {
+        try {
+            osc = OSC.createIntance(client_id, client_secret);
+            
+            GetContract getContract = JSON.getGson().fromJson(s, GetContract.class);
+            br.com.fitbank.domains.GetContract getContract1 = br.com.fitbank.requests.GetContract.GetContract (osc, System.getenv("CUSTOM_SERVICE_NUMBER"));
+            return getContract1;
+        } catch (RuntimeException | IOException e) {
+            e.printStackTrace();
+            assertNull(e);
+        }
+    }
+    public br.com.fitbank.domains.SignContract getContractTest(String client_id, String client_secret, String Contract) {
+
+        try {
+            osc = OSC.createIntance(client_id, client_secret);
+
+            br.com.fitbank.domains.Contract Contract = JSON.getGson().fromJson(Contract, br.com.fitbank.domains.Contract.class);
+            br.com.fitbank.domains.SignContract signContract = br.com.fitbank.requests.PostContract.postContract (osc, System.getenv("CUSTOM_SERVICE_NUMBER"),Contract);
+            return signContract;
+        } catch (RuntimeException | IOException e) {
+            e.printStackTrace();
+            assertNull(e);
+        }
+    }
+}
 ```
 ## References
 
