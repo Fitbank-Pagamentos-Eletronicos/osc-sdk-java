@@ -1,6 +1,7 @@
 package br.com.fitbank;
 
 import java.io.IOException;
+import java.io.NotActiveException;
 import java.text.Normalizer;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -8,7 +9,14 @@ import java.util.Objects;
 
 import br.com.fitbank.domains.*;
 import br.com.fitbank.requests.OAuth;
-
+import br.com.fitbank.requests.PubSubRequest;
+import br.com.fitbank.requests.PubSubSubscription;
+import br.com.fitbank.requests.Signup;
+import br.com.fitbank.utils.JSON;
+import com.google.cloud.pubsub.v1.AckReplyConsumer;
+import com.google.cloud.pubsub.v1.MessageReceiver;
+import com.google.cloud.pubsub.v1.Subscriber;
+import com.google.pubsub.v1.PubsubMessage;
 
 
 public class OSC {
@@ -75,6 +83,46 @@ public class OSC {
 
     public AuthSucess auth() throws IOException {
         return OAuth.request(this.client_id, this.client_secret);
+    }
+
+
+
+    public interface Callback {
+        void call(Pipeline pipeline) throws IOException;
+    }
+
+    public void setResponseListening(Callback callback) throws IOException, InterruptedException {
+
+        PubSubRequestReturn config = PubSubRequest.request(this);
+        MessageReceiver receiver = (PubsubMessage message, AckReplyConsumer consumer) -> {
+            try {
+                Pipeline pipeline = JSON.getGson().fromJson(message.getData().toString(), Pipeline.class);
+                callback.call(pipeline);
+                consumer.ack();
+            } catch (IOException e) {
+                consumer.nack();
+            }
+        };
+        Subscriber subscriber = PubSubSubscription.subscriber(config, receiver);
+        if (!subscriber.isRunning()){
+            throw new NotActiveException("Não foi possivel iniciar um canal para callbacks");
+        }
+    }
+
+    public Pipeline signup(SignupMatch data) throws IOException {
+        return Signup.request(this, data);
+    }
+
+    public Pipeline signup(br.com.fitbank.domains.SimpleSignup data) throws IOException {
+        return br.com.fitbank.requests.SimpleSignup.request(this, data);
+    }
+
+    public Pipeline proposal(Proposal data, String id) throws IOException {
+        return br.com.fitbank.requests.Proposal.request(this, data, id);
+    }
+
+    public Pipeline proposal(br.com.fitbank.domains.ProposalBankAccount data, String id) throws IOException {
+        return br.com.fitbank.requests.SimpleProposal.request(this, data, id);
     }
 
 }

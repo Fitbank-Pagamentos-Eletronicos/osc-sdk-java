@@ -5,7 +5,7 @@ import java.time.Instant;
 
 public class Pipeline implements Serializable{
     private String id;
-    private String status;
+    private PipelineStatus status;
     private String cpf;
     private String name;
     private Instant dateCreated;
@@ -14,7 +14,7 @@ public class Pipeline implements Serializable{
 
     public Pipeline(){ }
 
-    public Pipeline(String id, String status, String cpf, String name, Instant dateCreated, Instant lastUpdated) {
+    public Pipeline(String id, PipelineStatus status, String cpf, String name, Instant dateCreated, Instant lastUpdated) {
         setId(id);
         setStatus(status);
         setCpf(cpf);
@@ -30,10 +30,10 @@ public class Pipeline implements Serializable{
     public void setId(String id) {
         this.id = id;
     }
-    public String getStatus() {
+    public PipelineStatus getStatus() {
         return status;
     }
-    public void setStatus(String status) {
+    public void setStatus(PipelineStatus status) {
         this.status = status;
     }
     public String getCpf() {

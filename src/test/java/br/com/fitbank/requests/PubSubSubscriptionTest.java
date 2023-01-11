@@ -1,5 +1,6 @@
 package br.com.fitbank.requests;
 
+import br.com.fitbank.domains.PubSubRequestReturn;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.pubsub.v1.PubsubMessage;
@@ -19,8 +20,11 @@ public class PubSubSubscriptionTest {
                     System.out.println("Data: " + message.getData().toStringUtf8());
                     consumer.ack();
                 };
-
-        PubSubSubscription.subscriber("project-5341349585364433217", "callback-leonardo.sousa-sub", receiver);
+        PubSubRequestReturn config = new PubSubRequestReturn();
+        config.setProject_id("project-5341349585364433217");
+        config.setSubscription_id("callback-leonardo.sousa-sub");
+        config.setService_account("{}");
+        PubSubSubscription.subscriber(config, receiver);
         TimeUnit.SECONDS.sleep(30);
 
     }
