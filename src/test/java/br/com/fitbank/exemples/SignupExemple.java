@@ -2,8 +2,8 @@ package br.com.fitbank.exemples;
 
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.Pipeline;
-import br.com.fitbank.domains.SignupMatch;
+import br.com.fitbank.domains.response.PipelineResponse;
+import br.com.fitbank.domains.requests.SignupRequest;
 import br.com.fitbank.requests.Signup;
 import br.com.fitbank.utils.JSON;
 
@@ -16,21 +16,21 @@ public class SignupExemple {
         String client_data = "";
 
 
-        Pipeline pipeline = signup(client_id, client_secret, client_data);
+        PipelineResponse pipelineResponse = signup(client_id, client_secret, client_data);
 
-        if(pipeline != null) {
-            System.out.println("Pipeline: " + pipeline);
+        if(pipelineResponse != null) {
+            System.out.println("Pipeline: " + pipelineResponse);
         } else {
             System.out.println("Pipeline: error");
         }
     }
 
-    public static Pipeline signup(String client_id, String client_secret, String client_data) {
+    public static PipelineResponse signup(String client_id, String client_secret, String client_data) {
         try {
 
             OSC osc = OSC.createIntance(client_id, client_secret);
-            SignupMatch signupMatch = JSON.getGson().fromJson(client_data, SignupMatch.class);
-            return Signup.request(osc, signupMatch);
+            SignupRequest signupRequest = JSON.getGson().fromJson(client_data, SignupRequest.class);
+            return Signup.request(osc, signupRequest);
 
         } catch (RuntimeException | IOException e) {
             e.printStackTrace();

@@ -3,9 +3,9 @@ package br.com.fitbank.exemples;
 
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.Pipeline;
-import br.com.fitbank.domains.Proposal;
-import br.com.fitbank.domains.SignupMatch;
+import br.com.fitbank.domains.requests.ProposalRequest;
+import br.com.fitbank.domains.requests.SignupRequest;
+import br.com.fitbank.domains.response.PipelineResponse;
 import br.com.fitbank.utils.JSON;
 
 import java.io.IOException;
@@ -18,43 +18,43 @@ public class SignupProposalWithCallbackExemple {
 
         try {
             osc.setResponseListening(SignupProposalWithCallbackExemple::processPipelineResult);
-            Pipeline pipeline = signup();
-            processPipelineResult(pipeline);
+            PipelineResponse pipelineResponse = signup();
+            processPipelineResult(pipelineResponse);
 
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public static void processPipelineResult(Pipeline pipeline) throws IOException {
-        if(pipeline == null) {
+    public static void processPipelineResult(PipelineResponse pipelineResponse) throws IOException {
+        if(pipelineResponse == null) {
             System.out.println("Pipeline: error");
             return;
         }
 
-        switch (pipeline.getStatus()) {
-            case SIGNUP_ANALISIS -> System.out.println("Pipeline: " + pipeline.getId() + " (cadastro em analise)");
+        switch (pipelineResponse.getStatus()) {
+            case SIGNUP_ANALISIS -> System.out.println("Pipeline: " + pipelineResponse.getId() + " (cadastro em analise)");
             case SIGNUP_COMPLETED -> {
-                System.out.println("Pipeline: " + pipeline.getId() + " (enviar solicitação de proposta)");
-                proposal(pipeline.getId());
+                System.out.println("Pipeline: " + pipelineResponse.getId() + " (enviar solicitação de proposta)");
+                proposal(pipelineResponse.getId());
             }
-            case SIGNUP_DENIED -> System.out.println("Pipeline: " + pipeline.getId() + " (cadastro reprovado)");
-            case PROPOSAL_ANALISIS -> System.out.println("Pipeline: " + pipeline.getId() + " (proposta em analise)");
-            case PROPOSAL_CREATED -> System.out.println("Pipeline: " + pipeline.getId() + " (proposta(s) criadas)");
-            case PROPOSAL_DENIED -> System.out.println("Pipeline: " + pipeline.getId() + " (proposta reprovada)");
-            default -> System.out.println("Pipeline: " + pipeline.getId());
+            case SIGNUP_DENIED -> System.out.println("Pipeline: " + pipelineResponse.getId() + " (cadastro reprovado)");
+            case PROPOSAL_ANALISIS -> System.out.println("Pipeline: " + pipelineResponse.getId() + " (proposta em analise)");
+            case PROPOSAL_CREATED -> System.out.println("Pipeline: " + pipelineResponse.getId() + " (proposta(s) criadas)");
+            case PROPOSAL_DENIED -> System.out.println("Pipeline: " + pipelineResponse.getId() + " (proposta reprovada)");
+            default -> System.out.println("Pipeline: " + pipelineResponse.getId());
         }
     }
 
-    public static Pipeline signup() throws IOException {
+    public static PipelineResponse signup() throws IOException {
         String data = "";
-        SignupMatch signupMatch = JSON.getGson().fromJson(data, SignupMatch.class);
-        return OSC.getIntance().signup(signupMatch);
+        SignupRequest signupRequest = JSON.getGson().fromJson(data, SignupRequest.class);
+        return OSC.getIntance().signup(signupRequest);
     }
 
-    public static Pipeline proposal(String id) throws IOException {
+    public static PipelineResponse proposal(String id) throws IOException {
         String data = "";
-        Proposal proposal = JSON.getGson().fromJson(data, Proposal.class);
-        return OSC.getIntance().proposal(proposal, id);
+        ProposalRequest proposalRequest = JSON.getGson().fromJson(data, ProposalRequest.class);
+        return OSC.getIntance().proposal(proposalRequest, id);
     }
 }

@@ -2,6 +2,10 @@ package br.com.fitbank.domains;
 
 
 
+import br.com.fitbank.domains.domains.Identity;
+import br.com.fitbank.domains.enumerator.IdentityIssuer;
+import br.com.fitbank.domains.enumerator.IdentityType;
+import br.com.fitbank.domains.enumerator.State;
 import br.com.fitbank.utils.JSON;
 
 

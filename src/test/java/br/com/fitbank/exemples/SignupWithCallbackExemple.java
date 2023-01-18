@@ -2,8 +2,8 @@ package br.com.fitbank.exemples;
 
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.Pipeline;
-import br.com.fitbank.domains.SignupMatch;
+import br.com.fitbank.domains.response.PipelineResponse;
+import br.com.fitbank.domains.requests.SignupRequest;
 import br.com.fitbank.utils.JSON;
 
 import java.io.IOException;
@@ -16,25 +16,25 @@ public class SignupWithCallbackExemple {
 
         try {
             osc.setResponseListening(SignupWithCallbackExemple::processPipelineResult);
-            Pipeline pipeline = signup();
-            processPipelineResult(pipeline);
+            PipelineResponse pipelineResponse = signup();
+            processPipelineResult(pipelineResponse);
 
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public static void processPipelineResult(Pipeline pipeline){
-        if(pipeline == null) {
+    public static void processPipelineResult(PipelineResponse pipelineResponse){
+        if(pipelineResponse == null) {
             System.out.println("Pipeline: error");
             return;
         }
-        System.out.println("Pipeline: " + pipeline.getId());
+        System.out.println("Pipeline: " + pipelineResponse.getId());
     }
 
-    public static Pipeline signup() throws IOException {
+    public static PipelineResponse signup() throws IOException {
         String client_data = "";
-        SignupMatch signupMatch = JSON.getGson().fromJson(client_data, SignupMatch.class);
-        return OSC.getIntance().signup(signupMatch);
+        SignupRequest signupRequest = JSON.getGson().fromJson(client_data, SignupRequest.class);
+        return OSC.getIntance().signup(signupRequest);
     }
 }

@@ -1,6 +1,6 @@
 package br.com.fitbank.requests;
 
-import br.com.fitbank.domains.PubSubRequestReturn;
+import br.com.fitbank.domains.response.PubSubRequestReturn;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.pubsub.v1.MessageReceiver;
@@ -10,7 +10,6 @@ import com.google.pubsub.v1.ProjectSubscriptionName;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 
 public class PubSubSubscription {
     public static Subscriber subscriber(PubSubRequestReturn config, MessageReceiver receiver) throws IOException {

@@ -1,6 +1,6 @@
 package br.com.fitbank.requests;
 
-import br.com.fitbank.domains.PubSubRequestReturn;
+import br.com.fitbank.domains.response.PubSubRequestReturn;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.pubsub.v1.PubsubMessage;

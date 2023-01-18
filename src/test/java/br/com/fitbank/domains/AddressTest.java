@@ -1,6 +1,10 @@
 package br.com.fitbank.domains;
 
 
+import br.com.fitbank.domains.domains.Address;
+import br.com.fitbank.domains.enumerator.HomeSince;
+import br.com.fitbank.domains.enumerator.HomeType;
+import br.com.fitbank.domains.enumerator.State;
 import br.com.fitbank.utils.JSON;
 
 public class AddressTest {

@@ -1,7 +1,7 @@
 package br.com.fitbank.requests;
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.PubSubRequestReturn;
+import br.com.fitbank.domains.response.PubSubRequestReturn;
 import br.com.fitbank.utils.JSON;
 import okhttp3.*;
 

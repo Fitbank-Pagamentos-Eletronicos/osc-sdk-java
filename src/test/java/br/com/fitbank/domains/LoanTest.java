@@ -4,6 +4,10 @@ package br.com.fitbank.domains;
 
 
 
+import br.com.fitbank.domains.enumerator.CreditStatus;
+import br.com.fitbank.domains.domains.Loan;
+import br.com.fitbank.domains.enumerator.PendentDocuments;
+import br.com.fitbank.domains.enumerator.ProductType;
 import br.com.fitbank.utils.JSON;
 public class LoanTest {
     public static void main(String[] args) {

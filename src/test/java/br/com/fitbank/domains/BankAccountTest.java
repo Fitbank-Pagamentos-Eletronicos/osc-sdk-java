@@ -1,6 +1,8 @@
 package br.com.fitbank.domains;
 
 
+import br.com.fitbank.domains.domains.BankAccount;
+import br.com.fitbank.domains.enumerator.CreditStatus;
 import br.com.fitbank.utils.JSON;
 
 public class BankAccountTest {

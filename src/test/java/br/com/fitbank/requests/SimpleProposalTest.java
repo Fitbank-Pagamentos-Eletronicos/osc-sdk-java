@@ -1,7 +1,8 @@
 package br.com.fitbank.requests;
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.Pipeline;
+import br.com.fitbank.domains.response.PipelineResponse;
+import br.com.fitbank.domains.requests.SimpleProposalRequest;
 import br.com.fitbank.utils.JSON;
 
 import java.io.IOException;
@@ -46,16 +47,16 @@ public class SimpleProposalTest {
                     "    }" +
                     "  ]" +
                     "}";
-            br.com.fitbank.domains.ProposalBankAccount proposal = JSON.getGson().fromJson(s, br.com.fitbank.domains.ProposalBankAccount.class);
+            SimpleProposalRequest proposal = JSON.getGson().fromJson(s, SimpleProposalRequest.class);
 
-            Pipeline pipeline = br.com.fitbank.requests.SimpleProposal.request(osc, proposal, pipeline_id);
+            PipelineResponse pipelineResponse = br.com.fitbank.requests.SimpleProposal.request(osc, proposal, pipeline_id);
             //System.out.println("AQUI:" +pipeline.getId());
-            assertNotNull(pipeline.getId());
-            assertNotNull(pipeline.getStatus());
-            assertNotNull(pipeline.getCpf());
-            assertNotNull(pipeline.getName());
-            assertNotNull(pipeline.getDateCreated());
-            assertNotNull(pipeline.getLastUpdated());
+            assertNotNull(pipelineResponse.getId());
+            assertNotNull(pipelineResponse.getStatus());
+            assertNotNull(pipelineResponse.getCpf());
+            assertNotNull(pipelineResponse.getName());
+            assertNotNull(pipelineResponse.getDateCreated());
+            assertNotNull(pipelineResponse.getLastUpdated());
 
         } catch (RuntimeException | IOException e) {
             e.printStackTrace();

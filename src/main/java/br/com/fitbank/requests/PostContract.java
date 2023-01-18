@@ -1,20 +1,21 @@
 package br.com.fitbank.requests;
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.Contract;
+import br.com.fitbank.domains.requests.SignContractRequest;
+import br.com.fitbank.domains.response.SignContractResponse;
 import br.com.fitbank.utils.JSON;
 import okhttp3.*;
 
 import java.io.IOException;
 
 public class PostContract {
-    public static br.com.fitbank.domains.SignContract postContract(OSC osc, String customerServiceNumber, Contract contract) throws IOException {
+    public static SignContractResponse postContract(OSC osc, String customerServiceNumber, SignContractRequest signContractRequest) throws IOException {
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("application/json");
         String token = osc.getToken();
 
-        RequestBody formBody = RequestBody.create(JSON.getGson().toJson(contract), mediaType);
+        RequestBody formBody = RequestBody.create(JSON.getGson().toJson(signContractRequest), mediaType);
         Request request = new Request.Builder()
                 .method("post", formBody)
                 .addHeader("Authorization", "Bearer " + token)
@@ -31,7 +32,7 @@ public class PostContract {
             throw new IOException(responseString);
         }
 
-        return JSON.getGson().fromJson(responseString, br.com.fitbank.domains.SignContract.class);
+        return JSON.getGson().fromJson(responseString, SignContractResponse.class);
     }
 }
 

@@ -1,6 +1,7 @@
 package br.com.fitbank.requests;
 
 import br.com.fitbank.OSC;
+import br.com.fitbank.domains.response.GetContractResponse;
 import br.com.fitbank.utils.JSON;
 import okhttp3.*;
 
@@ -8,7 +9,7 @@ import java.io.IOException;
 
 public class GetContract {
 
-    public static br.com.fitbank.domains.GetContract GetContract(OSC osc, String customerServiceNumber) throws IOException {
+    public static GetContractResponse GetContract(OSC osc, String customerServiceNumber) throws IOException {
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("application/json");
@@ -31,7 +32,7 @@ public class GetContract {
             throw new IOException(responseString);
         }
 
-        return JSON.getGson().fromJson(responseString, br.com.fitbank.domains.GetContract.class);
+        return JSON.getGson().fromJson(responseString, GetContractResponse.class);
     }
 
 }

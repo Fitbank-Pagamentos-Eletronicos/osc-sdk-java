@@ -2,6 +2,9 @@ package br.com.fitbank.domains;
 
 
 
+import br.com.fitbank.domains.domains.Match;
+import br.com.fitbank.domains.domains.MatchAuto;
+import br.com.fitbank.domains.domains.PipelineMatchLoan;
 import br.com.fitbank.utils.JSON;
 
 

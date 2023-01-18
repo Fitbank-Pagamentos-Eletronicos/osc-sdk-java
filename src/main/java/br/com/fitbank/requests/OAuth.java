@@ -3,7 +3,7 @@ package br.com.fitbank.requests;
 import java.io.IOException;
 import java.util.Base64;
 
-import br.com.fitbank.domains.AuthSucess;
+import br.com.fitbank.domains.response.AuthResponse;
 import br.com.fitbank.utils.JSON;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -13,7 +13,7 @@ import okhttp3.Response;
 
 public class OAuth{
   
-  public static AuthSucess request(String clientId , String clientSecret) throws IOException{
+  public static AuthResponse request(String clientId , String clientSecret) throws IOException{
 
     String originalInput = clientId + ":" + clientSecret;
     String encodedString = Base64.getEncoder().encodeToString(originalInput.getBytes());
@@ -35,7 +35,7 @@ public class OAuth{
         throw new IOException(responseString);
       }
 
-      return JSON.getGson().fromJson(responseString, AuthSucess.class);
+      return JSON.getGson().fromJson(responseString, AuthResponse.class);
   }
 
 }

@@ -1,7 +1,7 @@
 package br.com.fitbank.requests;
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.PubSubRequestReturn;
+import br.com.fitbank.domains.response.PubSubRequestReturn;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

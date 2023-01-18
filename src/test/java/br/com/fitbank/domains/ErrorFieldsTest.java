@@ -3,6 +3,8 @@ package br.com.fitbank.domains;
 
 
 
+import br.com.fitbank.domains.domains.ErrorField;
+import br.com.fitbank.domains.domains.ErrorFields;
 import br.com.fitbank.utils.JSON;
 
 public class ErrorFieldsTest {

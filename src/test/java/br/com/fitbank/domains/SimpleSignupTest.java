@@ -1,6 +1,8 @@
 package br.com.fitbank.domains;
 
 
+import br.com.fitbank.domains.domains.LogData;
+import br.com.fitbank.domains.requests.SimpleSignupRequest;
 import br.com.fitbank.utils.JSON;
 
 
@@ -21,7 +23,7 @@ public class SimpleSignupTest {
         boolean hasAndroid = true;
         LogData logData = new LogData(0, 0, "ocourrence date", "user Agent", "ip ip ip", "mac mac mac");
 
-        SimpleSignup S = new SimpleSignup(cpf, name, birthday, email, phone, zipCode, hasCreditCard, hasRestriction, hasOwnHouse, hasVehicle, hasAndroid, logData);
+        SimpleSignupRequest S = new SimpleSignupRequest(cpf, name, birthday, email, phone, zipCode, hasCreditCard, hasRestriction, hasOwnHouse, hasVehicle, hasAndroid, logData);
 
         System.out.println(S);
         System.out.println(S.getLogData());
@@ -31,7 +33,7 @@ public class SimpleSignupTest {
         System.out.println(s);
         System.out.println("_______");
 
-        SimpleSignup newS = JSON.getGson().fromJson(s, SimpleSignup.class);
+        SimpleSignupRequest newS = JSON.getGson().fromJson(s, SimpleSignupRequest.class);
         System.out.println(newS);
         System.out.println(newS.getCpf());
         System.out.println(newS.getName());

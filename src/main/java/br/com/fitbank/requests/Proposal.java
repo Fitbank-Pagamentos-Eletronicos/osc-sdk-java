@@ -1,20 +1,21 @@
 package br.com.fitbank.requests;
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.Pipeline;
+import br.com.fitbank.domains.requests.ProposalRequest;
+import br.com.fitbank.domains.response.PipelineResponse;
 import br.com.fitbank.utils.JSON;
 import okhttp3.*;
 
 import java.io.IOException;
 
 public class Proposal {
-    public static Pipeline request(OSC osc, br.com.fitbank.domains.Proposal proposal, String ID) throws IOException {
+    public static PipelineResponse request(OSC osc, ProposalRequest proposalRequest, String ID) throws IOException {
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         String token = osc.getToken();
 
         MediaType mediaType = MediaType.parse("application/json");
-        RequestBody formBody = RequestBody.create(JSON.getGson().toJson(proposal), mediaType);
+        RequestBody formBody = RequestBody.create(JSON.getGson().toJson(proposalRequest), mediaType);
        // System.out.println(JSON.getGson().toJson(proposal));
         Request request = new Request.Builder()
                 .method("POST", formBody)
@@ -34,6 +35,6 @@ public class Proposal {
        //     throw new IOException(responseString);
        // }
 
-        return JSON.getGson().fromJson(responseString, Pipeline.class);
+        return JSON.getGson().fromJson(responseString, PipelineResponse.class);
     }
 }

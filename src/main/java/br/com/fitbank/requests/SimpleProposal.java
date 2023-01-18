@@ -1,14 +1,15 @@
 package br.com.fitbank.requests;
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.Pipeline;
+import br.com.fitbank.domains.response.PipelineResponse;
+import br.com.fitbank.domains.requests.SimpleProposalRequest;
 import br.com.fitbank.utils.JSON;
 import okhttp3.*;
 
 import java.io.IOException;
 
 public class SimpleProposal {
-    public static Pipeline request(OSC osc, br.com.fitbank.domains.ProposalBankAccount proposal, String ID) throws IOException {
+    public static PipelineResponse request(OSC osc, SimpleProposalRequest proposal, String ID) throws IOException {
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         String token = osc.getToken();
@@ -34,6 +35,6 @@ public class SimpleProposal {
         //     throw new IOException(responseString);
         // }
 
-        return JSON.getGson().fromJson(responseString, Pipeline.class);
+        return JSON.getGson().fromJson(responseString, PipelineResponse.class);
     }
 }

@@ -1,6 +1,9 @@
 package br.com.fitbank.domains;
 
 
+import br.com.fitbank.domains.domains.*;
+import br.com.fitbank.domains.enumerator.*;
+import br.com.fitbank.domains.requests.SignupRequest;
 import br.com.fitbank.utils.JSON;
 
 
@@ -27,16 +30,16 @@ public class SignupMatchTest {
         Products[] products = new Products[]{new Products(productHome)};
         LogData logData = new LogData(1111, 2222, "ocourrence Date", "User Agent", "ip", "email");
 
-        SignupMatch signupMatch = new SignupMatch(cpf, name, birthday, email, phone, zipCode, education, banks, occupation, income, hasCreditCard, hasRestriction, hasOwnHouse, hasVehicle, hasAndroid, products, logData);
+        SignupRequest signupRequest = new SignupRequest(cpf, name, birthday, email, phone, zipCode, education, banks, occupation, income, hasCreditCard, hasRestriction, hasOwnHouse, hasVehicle, hasAndroid, products, logData);
 
-        System.out.println(signupMatch);
+        System.out.println(signupRequest);
         System.out.println("_______");
 
-        String s = JSON.getGson().toJson(signupMatch);
+        String s = JSON.getGson().toJson(signupRequest);
         System.out.println(s);
         System.out.println("_______");
 
-        SignupMatch newSignupMatch = JSON.getGson().fromJson(s, SignupMatch.class);
-        System.out.println(newSignupMatch);
+        SignupRequest newSignupRequest = JSON.getGson().fromJson(s, SignupRequest.class);
+        System.out.println(newSignupRequest);
     }
 }

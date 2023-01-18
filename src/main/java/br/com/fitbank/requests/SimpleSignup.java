@@ -1,20 +1,21 @@
 package br.com.fitbank.requests;
 
 import br.com.fitbank.OSC;
-import br.com.fitbank.domains.Pipeline;
+import br.com.fitbank.domains.requests.SimpleSignupRequest;
+import br.com.fitbank.domains.response.PipelineResponse;
 import br.com.fitbank.utils.JSON;
 import okhttp3.*;
 
 import java.io.IOException;
 
 public class SimpleSignup {
-    public static Pipeline request(OSC osc, br.com.fitbank.domains.SimpleSignup simpleSignup) throws IOException {
+    public static PipelineResponse request(OSC osc, SimpleSignupRequest simpleSignupRequest) throws IOException {
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         MediaType mediaType = MediaType.parse("application/json");
         String token = osc.getToken();
 
-        RequestBody formBody = RequestBody.create(JSON.getGson().toJson(simpleSignup), mediaType);
+        RequestBody formBody = RequestBody.create(JSON.getGson().toJson(simpleSignupRequest), mediaType);
         Request request = new Request.Builder()
                 .method("POST", formBody)
                 .addHeader("Authorization", "Bearer " + token)
@@ -31,6 +32,6 @@ public class SimpleSignup {
             throw new IOException(responseString);
         }
 
-        return JSON.getGson().fromJson(responseString, Pipeline.class);
+        return JSON.getGson().fromJson(responseString, PipelineResponse.class);
     }
 }

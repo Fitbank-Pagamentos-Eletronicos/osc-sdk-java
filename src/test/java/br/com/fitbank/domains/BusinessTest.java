@@ -1,6 +1,11 @@
 package br.com.fitbank.domains;
 
 
+import br.com.fitbank.domains.domains.*;
+import br.com.fitbank.domains.enumerator.EmploymentSince;
+import br.com.fitbank.domains.enumerator.Occupation;
+import br.com.fitbank.domains.enumerator.Profession;
+import br.com.fitbank.domains.enumerator.State;
 import br.com.fitbank.utils.JSON;
 
 public class BusinessTest {
