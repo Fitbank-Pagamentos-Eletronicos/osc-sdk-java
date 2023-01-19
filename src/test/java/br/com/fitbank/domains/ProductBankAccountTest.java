@@ -1,6 +1,7 @@
 package br.com.fitbank.domains;
 
 
+import br.com.fitbank.domains.domains.ProductBankAccount;
 import br.com.fitbank.utils.JSON;
 
 

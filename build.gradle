@@ -19,7 +19,7 @@ group "br.com.fitbank"
 
 java {
   toolchain {
-    languageVersion.set(JavaLanguageVersion.of(18))
+    languageVersion.set(JavaLanguageVersion.of(17))
   }
 }
 
@@ -30,6 +30,9 @@ repositories {
 dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.10.0' // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
     implementation 'com.google.code.gson:gson:2.10'
+
+    implementation platform('com.google.cloud:libraries-bom:26.1.5')
+    implementation 'com.google.cloud:google-cloud-pubsub'
 
     testImplementation platform('org.junit:junit-bom:5.9.1') // https://mvnrepository.com/artifact/org.junit/junit-bom
     testImplementation 'org.junit.jupiter:junit-jupiter' // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter

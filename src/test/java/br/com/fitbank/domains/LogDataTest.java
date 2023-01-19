@@ -3,6 +3,7 @@ package br.com.fitbank.domains;
 
 
 
+import br.com.fitbank.domains.domains.LogData;
 import br.com.fitbank.utils.JSON;
 
 public class LogDataTest {

@@ -1,6 +1,11 @@
 package br.com.fitbank.domains;
 
 
+import br.com.fitbank.domains.domains.*;
+import br.com.fitbank.domains.enumerator.EmploymentSince;
+import br.com.fitbank.domains.enumerator.Occupation;
+import br.com.fitbank.domains.enumerator.Profession;
+import br.com.fitbank.domains.enumerator.State;
 import br.com.fitbank.utils.JSON;
 
 public class BusinessTest {
@@ -19,9 +24,9 @@ public class BusinessTest {
         String complement = "complement";
         String district = "district";
         State state = State.AC;
-        City city = new City("cidade");
+        String city = "cidade";
 
-        Business business = new Business(occupation, profession, companyName, phone, income, employmentSince, payday, benefitNumber, zipCode, adress, number, complement, district, state, city);
+        Business business = new Business(occupation, profession, companyName, phone, income, payday, benefitNumber, zipCode, adress, number, complement, district, state, city);
 
         System.out.println(business);
         System.out.println("_______");

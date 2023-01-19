@@ -1,6 +1,9 @@
 package br.com.fitbank.domains;
 
 
+import br.com.fitbank.domains.enumerator.DocumentType;
+import br.com.fitbank.domains.enumerator.MimeType;
+import br.com.fitbank.domains.response.DocumentResponse;
 import br.com.fitbank.utils.JSON;
 
 public class DocumentResponseTest {

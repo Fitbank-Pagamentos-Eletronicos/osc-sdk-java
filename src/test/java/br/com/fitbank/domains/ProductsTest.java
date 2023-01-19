@@ -1,6 +1,10 @@
 package br.com.fitbank.domains;
 
 
+import br.com.fitbank.domains.domains.*;
+import br.com.fitbank.domains.enumerator.Network;
+import br.com.fitbank.domains.enumerator.ProductType;
+import br.com.fitbank.domains.enumerator.RealEstateType;
 import br.com.fitbank.utils.JSON;
 
 
