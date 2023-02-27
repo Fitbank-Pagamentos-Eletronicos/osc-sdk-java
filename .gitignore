@@ -1,0 +1,7 @@
+.idea
+.vscode
+.gradle
+*.iml
+.env
+build
+e19ce40

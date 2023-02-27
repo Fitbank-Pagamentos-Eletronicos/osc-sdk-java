@@ -1,0 +1,96 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+    dependencies {
+        classpath "gradle.plugin.ru.akman.vscode-tasks:vscode-tasks:0.4.0"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.9.5"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id "com.jfrog.artifactory" version "4.18.3"
+
+}
+
+version "0.0.0-PREVIEW"
+group "br.com.fitbank"
+
+apply plugin:"eclipse"
+apply plugin:"idea"
+apply plugin:"com.jfrog.artifactory"
+apply plugin:"maven-publish"
+
+java {
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(17))
+  }
+}
+
+repositories {
+    mavenLocal()
+    maven { url "https://repo.grails.org/grails/core" }
+    maven {
+        url  "https://jfrog.easycredito.com.br/artifactory/gradle-release-local"//System.getenv("ARTIFACTORYURL") + "/" + System.getenv("ARTIFACTORYREPOKEY")
+        credentials {
+            username = "desenvolvimento"//System.getenv("ARTIFCATORYUSERNAME")
+            password = "AP2Z8fbwg579GRTDqrke15YauvNKaeWzqK827gbNyX9aHiCVhBCpfzFZJDA4"//System.getenv("ARTIFACTORYPASSWORD")
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0' // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
+    implementation 'com.google.code.gson:gson:2.10'
+
+    implementation platform('com.google.cloud:libraries-bom:26.1.5')
+    implementation 'com.google.cloud:google-cloud-pubsub'
+
+    testImplementation platform('org.junit:junit-bom:5.9.1') // https://mvnrepository.com/artifact/org.junit/junit-bom
+    testImplementation 'org.junit.jupiter:junit-jupiter' // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+artifactory {//gradlew clean jar artifactoryPublish
+    publish {
+        contextUrl = "https://jfrog.easycredito.com.br/artifactory"//System.getenv("ARTIFACTORYURL")
+        repository {
+            repoKey = "gradle-release-local"//System.getenv("ARTIFACTORYREPOKEY")
+            username = "desenvolvimento"//System.getenv("ARTIFCATORYUSERNAME")
+            password = "AP2Z8fbwg579GRTDqrke15YauvNKaeWzqK827gbNyX9aHiCVhBCpfzFZJDA4"//System.getenv("ARTIFACTORYPASSWORD")
+        }
+        defaults {
+            publications('mavenJava')
+            publishArtifacts = true
+            properties = ['qa.level': 'basic', 'dev.team' : 'core']
+            publishPom = true
+        }
+    }
+}
+/*
+test {
+    doFirst {
+        file('.env').readLines().each() {
+            if (!it.isEmpty() && !it.startsWith("#")) {
+                def (key, value) = it.tokenize('=')
+                environment key, value
+            }
+        }
+    }
+
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}*/
